@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divam Trivedi | Robotics Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills-logos">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="profile-image">
+                <img src="Images/Profile_Image.png" alt="Divam Trivedi">
+            </div>
+            <h1 id="typed-name"></h1>
+            <p class="location">Boston, MA</p>
+            <p>Robotics Engineer | Turning Perception & AI Into Human-Centered Robotic Solutions</p>
+            <div class="hero-links">
+                <a href="mailto:divam.trivedi@gmail.com" class="btn">Get In Touch</a>
+                <a href="https://github.com/Divam-Trivedi" target="_blank" class="btn">View GitHub</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span style="font-size: 2rem;">↓</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About Me</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I'm a robotics and perception engineer pursuing my M.S. in Robotics at Worcester Polytechnic Institute (expected graduation by May 2026), with a strong passion for <strong>building intelligent robots that see, think, and act</strong>.</p>
+                    <p>With hands-on experience in end-to-end perception and control systems for mobile and manipulation robots, I specialize in bridging the gap between research algorithms and real-world prototypes. My work spans computer vision, sensor fusion, deep learning, and embedded deployment on platforms like Jetson.</p>
+                    <p>I work best on projects that combine algorithms, hardware, and real-world impact. I thrive where hardware meets algorithms, and where perception drives autonomy.</p>
+                    <p>If it involves Robots sensing, deciding, or acting - I want to build it!</p>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <strong>Perception</strong>
+                        <p>2D/3D vision, object detection, pose estimation, photogrammetry, septh fusion </p>
+                    </div>
+                    <div class="skill-item">
+                        <strong>Machine Learning</strong>
+                        <p>Deep RL, Imitation Learning, CNNs, Transformers</p>
+                    </div>
+                    <div class="skill-item">
+                        <strong>State Estimation</strong>
+                        <p>Visual-Inertial Odometry, EKF/IEKF, SLAM</p>
+                    </div>
+                    <div class="skill-item">
+                        <strong>Control & Dynamics</strong>
+                        <p>Kinematics, trajectory planning, computed-torque control</p>
+                    </div>
+                    <div class="skill-item">
+                        <strong>Systems</strong>
+                        <p>ROS2, Gazebo, Jetson, MuJoCo, Blender, Docker</p>
+                    </div>
+                    <div class="skill-item">
+                        <strong>Programming</strong>
+                        <p>Python, C/C++, PyTorch, TensorFlow, OpenCV</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <div class="section-header">
+                <h2>Experience</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="timeline">
+                <!-- <div class="timeline-item">
+                    <h3>Head of Machine Learning Vertical</h3>
+                    <div class="date">CIRQuIT (Centre for Interdisciplinary Research in Quantum Information Technology) | July 2022 - August 2024</div>
+                    <p>Led the Machine Learning vertical at CIRQuIT, driving research initiatives in quantum machine learning and interdisciplinary applications of AI in quantum computing.</p>
+                </div> -->
+
+                <div class="timeline-item">
+                    <h3>Research Assistant - Human-Inspired Robotics (HiRO) Lab</h3>
+                    <div class="date">Worcester Polytechnic Institute | January 2025 - Present</div>
+                    <ul>
+                        <li>Building the perception stack for a nursing-assistance robot, including multi-camera calibration, depth fusion, and object recognition.</li>
+                        <li>Developed a vision-only 6-DoF pose estimation system with under 5% error and integrated visual SLAM for indoor navigation.</li>
+                        <li>Created a gesture-enabled accessibility interface (MediaPipe + ROS2) with over 90% recognition accuracy.</li>
+                        <li>Deploying and optimizing perception models on Jetson Nano, achieving ~2.0 s/frame embedded inference.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Research Assistant - Fire Protection Engineering</h3>
+                    <div class="date">Worcester Polytechnic Institute | August 2025 - Present</div>
+                    <ul>
+                        <li>Conducting combustion diagnostics using cone calorimetry, analyzing heat release rates, ignition behavior, and material combustion properties.</li>
+                        <li>Developing stereo-camera Particle Image Velocimetry (PIV) workflows for flow-field measurement, including calibration and vector field reconstruction.</li>
+                        <li>Designed DAQ interfaces for multi-channel thermocouples and heat flux gauges using LabView, enabling synchronized high-rate thermal data acquisition.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Research Intern</h3>
+                    <div class="date">Indian Institute of Science (IISc) | November 2023 - June 2024</div>
+                    <ul>
+                        <li>Integrated camera-LiDAR fusion and NeRF perception modules with ROS2 control pipelines on NVIDIA Jetson Nano</li>
+                        <li>Executed SfM pipeline achieving <5% geometric deviation against ground truth</li>
+                        <li>Improved navigation accuracy by 20% through multi-sensor calibration for robust SLAM</li>
+                        <li>Optimized 3D model generation algorithms, reducing processing time by ~15%</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Machine Learning Intern</h3>
+                    <div class="date">Nokia Corporation | October 2023 - February 2024</div>
+                    <ul>
+                        <li>Engineered digital twin framework for 4G/5G networks, improving PRACH detection accuracy by ~20%</li>
+                        <li>Built real-time KPI monitoring pipelines reducing latency by ~15%</li>
+                        <li>Deployed ML models for dynamic network optimization, improving cell traffic management by ~25%</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>CTY Mentorship Program - Security Lead</h3>
+                    <div class="date">Hewlett Packard Enterprise (HPE) | February 2023 - June 2023</div>
+                    <ul>
+                        <li>Led detection and mitigation of runtime security vulnerabilities in Kubernetes clusters</li>
+                        <li>Reduced security exposure by ~40% and improved detection time by 25%</li>
+                        <li>Built documentation and taught workshops on container security</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Projects</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Nursing Robot Perception Stack</h3>
+                    <p>Built comprehensive perception system with multi-camera calibration, depth fusion, and object recognition for bi-manual mobile nurse assistant. Achieved <5% pose estimation error for medical objects.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">ROS2</span>
+                        <span class="tech-tag">PyTorch</span>
+                        <span class="tech-tag">Jetson Nano</span>
+                        <span class="tech-tag">Intel RealSense</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>6-DoF Pose Estimation</h3>
+                    <p>Developed marker-less pose estimator for medical objects using vision-only pipeline and multi-view fusion. Eliminated physical markers, reducing setup time by ~30%.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">TensorFlow</span>
+                        <span class="tech-tag">Computer Vision</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>RL Control for UR10 Robot</h3>
+                    <p>Implemented DDPG and A3C from scratch for manipulation tasks. Built imitation learning pipeline for peg-in-hole tasks with action chunking transformers.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">PyTorch</span>
+                        <span class="tech-tag">Reinforcement Learning</span>
+                        <span class="tech-tag">Transformers</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Visual-Inertial Odometry</h3>
+                    <p>Created >10,000 frame synthetic Vision+IMU dataset. Implemented MSCKF filter and deep fusion network achieving <5% trajectory recovery error on benchmarks.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Blender</span>
+                        <span class="tech-tag">SLAM</span>
+                        <span class="tech-tag">Sensor Fusion</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Gesture-Controlled Robot</h3>
+                    <p>Built simulation and control stack for non-verbal gesture control. Achieved >90% gesture detection accuracy and reduced adaptation time by ~40%.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">ROS2</span>
+                        <span class="tech-tag">Gazebo</span>
+                        <span class="tech-tag">MediaPipe</span>
+                        <span class="tech-tag">OpenCV</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Autonomous Vehicle Dashboard</h3>
+                    <p>Developed 12 FPS dashboard with lane detection, object tracking, pedestrian pose estimation, and collision prediction for Tesla Model S video streams.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">YOLO</span>
+                        <span class="tech-tag">RAFT</span>
+                        <span class="tech-tag">OpenPose</span>
+                        <span class="tech-tag">Blender</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Logos Section with Infinite Carousel -->
+    <section id="skills-logos">
+        <div class="container">
+            <div class="section-header">
+                <h2>The Tech That Powers My Work</h2>
+                <div class="underline"></div>
+            </div>
+
+            <!-- First Row: Left to Right -->
+            <div class="carousel-row">
+                <div class="carousel-track" data-direction="left">
+
+                    <!-- ORIGINAL SET -->
+                    <a href="https://www.python.org" target="_blank" class="skill-logo-carousel">
+                        <img src="Images/python-svgrepo-com.svg" alt="Python"><span class="tooltip">Python</span>
+                    </a>
+
+                    <a href="https://isocpp.org" target="_blank" class="skill-logo-carousel">
+                        <img src="Images/cpp3-svgrepo-com.svg" alt="C++"><span class="tooltip">C++</span>
+                    </a>
+
+                    <a href="https://www.ros.org" target="_blank" class="skill-logo-carousel">
+                        <img src="Images/Robot Operating System (ROS).svg" alt="ROS"><span class="tooltip">ROS / ROS2</span>
+                    </a>
+
+                    <a href="https://pytorch.org" target="_blank" class="skill-logo-carousel">
+                        <img src="Images/pytorch-svgrepo-com.svg" alt="PyTorch"><span class="tooltip">PyTorch</span>
+                    </a>
+
+                    <a href="https://tensorflow.org" target="_blank" class="skill-logo-carousel">
+                        <img src="Images/tensorflow-svgrepo-com.svg" alt="TensorFlow"><span class="tooltip">TensorFlow</span>
+                    </a>
+
+                    <a href="https://opencv.org" target="_blank" class="skill-logo-carousel">
+                        <img src="Images/opencv-svgrepo-com.svg" alt="OpenCV"><span class="tooltip">OpenCV</span>
+                    </a>
+
+                    <a href="https://numpy.org" target="_blank" class="skill-logo-carousel">
+                        <img src="Images/numpy-svgrepo-com.svg" alt="NumPy"><span class="tooltip">NumPy</span>
+                    </a>
+
+                    <!-- Duplicate for seamless loop -->
+                    <a href="https://www.python.org" target="_blank" class="skill-logo-carousel">
+                        <img src="Images/python-svgrepo-com.svg" alt="Python"><span class="tooltip">Python</span>
+                    </a>
+
+                    <a href="https://isocpp.org" target="_blank" class="skill-logo-carousel">
+                        <img src="Images/cpp3-svgrepo-com.svg" alt="C++"><span class="tooltip">C++</span>
+                    </a>
+
+                    <a href="https://www.ros.org" target="_blank" class="skill-logo-carousel">
+                        <img src="Images/Robot Operating System (ROS).svg" alt="ROS"><span class="tooltip">ROS / ROS2</span>
+                    </a>
+
+                    <a href="https://pytorch.org" target="_blank" class="skill-logo-carousel">
+                        <img src="Images/pytorch-svgrepo-com.svg" alt="PyTorch"><span class="tooltip">PyTorch</span>
+                    </a>
+
+                    <a href="https://tensorflow.org" target="_blank" class="skill-logo-carousel">
+                        <img src="Images/tensorflow-svgrepo-com.svg" alt="TensorFlow"><span class="tooltip">TensorFlow</span>
+                    </a>
+
+                    <a href="https://opencv.org" target="_blank" class="skill-logo-carousel">
+                        <img src="Images/opencv-svgrepo-com.svg" alt="OpenCV"><span class="tooltip">OpenCV</span>
+                    </a>
+
+                    <a href="https://numpy.org" target="_blank" class="skill-logo-carousel">
+                        <img src="Images/numpy-svgrepo-com.svg" alt="NumPy"><span class="tooltip">NumPy</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Second Row: Right to Left -->
+            <div class="carousel-row">
+                <div class="carousel-track" data-direction="right">
+
+                    <a href="https://gazebosim.org" target="_blank" class="skill-logo-carousel">
+                        <img src="Images/Gazebo.svg" alt="Gazebo"><span class="tooltip">Gazebo</span>
+                    </a>
+
+                    <a href="https://blender.org" target="_blank" class="skill-logo-carousel">
+                        <img src="Images/Blender.svg" alt="Blender"><span class="tooltip">Blender</span>
+                    </a>
+
+                    <a href="https://unrealengine.com" target="_blank" class="skill-logo-carousel">
+                        <img src="Images/Unreal Engine.svg" alt="Unreal Engine"><span class="tooltip">Unreal Engine</span>
+                    </a>
+
+                    <a href="https://mathworks.com" target="_blank" class="skill-logo-carousel">
+                        <img src="Images/matlab-svgrepo-com.svg" alt="MATLAB"><span class="tooltip">MATLAB</span>
+                    </a>
+
+                    <a href="https://mujoco.org" target="_blank" class="skill-logo-carousel">
+                        <img src="Images/mujoco.png" alt="MuJoCo"><span class="tooltip">MuJoCo</span>
+                    </a>
+
+                    <a href="https://scikit-learn.org" target="_blank" class="skill-logo-carousel">
+                        <img src="Images/scikit-learn.svg" alt="Scikit-learn"><span class="tooltip">Sklearn</span>
+                    </a>
+
+                    <a href="https://www.docker.com" target="_blank" class="skill-logo-carousel">
+                        <img src="Images/docker-svgrepo-com.svg" alt="Docker"><span class="tooltip">Docker</span>
+                    </a>
+
+                    <a href="https://kubernetes.io" target="_blank" class="skill-logo-carousel">
+                        <img src="Images/kubernetes-svgrepo-com.svg" alt="Kubernetes"><span class="tooltip">Kubernetes</span>
+                    </a>
+
+                    <!-- Duplicate set -->
+                    <a href="https://gazebosim.org" target="_blank" class="skill-logo-carousel">
+                        <img src="Images/Gazebo.svg" alt="Gazebo"><span class="tooltip">Gazebo</span>
+                    </a>
+                    <a href="https://blender.org" target="_blank" class="skill-logo-carousel">
+                        <img src="Images/Blender.svg" alt="Blender"><span class="tooltip">Blender</span>
+                    </a>
+                    <a href="https://unrealengine.com" target="_blank" class="skill-logo-carousel">
+                        <img src="Images/Unreal Engine.svg" alt="Unreal Engine"><span class="tooltip">Unreal Engine</span>
+                    </a>
+                    <a href="https://mathworks.com" target="_blank" class="skill-logo-carousel">
+                        <img src="Images/matlab-svgrepo-com.svg" alt="MATLAB"><span class="tooltip">MATLAB</span>
+                    </a>
+                    <a href="https://mujoco.org" target="_blank" class="skill-logo-carousel">
+                        <img src="Images/mujoco.png" alt="MuJoCo"><span class="tooltip">MuJoCo</span>
+                    </a>
+                    <a href="https://scikit-learn.org" target="_blank" class="skill-logo-carousel">
+                        <img src="Images/scikit-learn.svg" alt="Scikit-learn"><span class="tooltip">Sklearn</span>
+                    </a>
+                    <a href="https://docker.com" target="_blank" class="skill-logo-carousel">
+                        <img src="Images/docker-svgrepo-com.svg" alt="Docker"><span class="tooltip">Docker</span>
+                    </a>
+                    <a href="https://kubernetes.io" target="_blank" class="skill-logo-carousel">
+                        <img src="Images/kubernetes-svgrepo-com.svg" alt="Kubernetes"><span class="tooltip">Kubernetes</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Third Row: Left to Right -->
+            <div class="carousel-row">
+                <div class="carousel-track" data-direction="left">
+
+                    <a href="https://git-scm.com" target="_blank" class="skill-logo-carousel">
+                        <img src="Images/git-svgrepo-com.svg" alt="Git"><span class="tooltip">Git</span>
+                    </a>
+
+                    <a href="https://github.com" target="_blank" class="skill-logo-carousel">
+                        <img src="Images/github-142-svgrepo-com.svg" alt="GitHub"><span class="tooltip">GitHub</span>
+                    </a>
+
+                    <a href="https://kernel.org" target="_blank" class="skill-logo-carousel">
+                        <img src="Images/linux-svgrepo-com.svg" alt="Linux"><span class="tooltip">Linux</span>
+                    </a>
+
+                    <a href="https://arduino.cc" target="_blank" class="skill-logo-carousel">
+                        <img src="Images/Arduino.svg" alt="Arduino"><span class="tooltip">Arduino</span>
+                    </a>
+
+                    <a href="https://raspberrypi.org" target="_blank" class="skill-logo-carousel">
+                        <img src="Images/Raspberry Pi.svg" alt="Raspberry Pi"><span class="tooltip">Raspberry Pi</span>
+                    </a>
+
+                    <a href="https://pandas.pydata.org" target="_blank" class="skill-logo-carousel">
+                        <img src="Images/Pandas.svg" alt="Pandas"><span class="tooltip">Pandas</span>
+                    </a>
+
+                    <!-- Duplicate set -->
+                    <a href="https://git-scm.com" target="_blank" class="skill-logo-carousel">
+                        <img src="Images/git-svgrepo-com.svg" alt="Git"><span class="tooltip">Git</span>
+                    </a>
+
+                    <a href="https://github.com" target="_blank" class="skill-logo-carousel">
+                        <img src="Images/github-142-svgrepo-com.svg" alt="GitHub"><span class="tooltip">GitHub</span>
+                    </a>
+
+                    <a href="https://kernel.org" target="_blank" class="skill-logo-carousel">
+                        <img src="Images/linux-svgrepo-com.svg" alt="Linux"><span class="tooltip">Linux</span>
+                    </a>
+
+                    <a href="https://arduino.cc" target="_blank" class="skill-logo-carousel">
+                        <img src="Images/Arduino.svg" alt="Arduino"><span class="tooltip">Arduino</span>
+                    </a>
+
+                    <a href="https://raspberrypi.org" target="_blank" class="skill-logo-carousel">
+                        <img src="Images/Raspberry Pi.svg" alt="Raspberry Pi"><span class="tooltip">Raspberry Pi</span>
+                    </a>
+
+                    <a href="https://pandas.pydata.org" target="_blank" class="skill-logo-carousel">
+                        <img src="Images/Pandas.svg" alt="Pandas"><span class="tooltip">Pandas</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <div class="section-header">
+                <h2>Education</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="education-grid">
+
+                <div class="education-card">
+                    <h3>Worcester Polytechnic Institute</h3>
+                    <div class="degree">Master of Science in Robotics</div>
+                    <p>Worcester, Massachusetts, USA</p>
+                    <p>August 2024 – May 2026 (Expected)</p>
+                    <p class="gpa">CGPA: 4.00/4.00</p>
+                    <p style="margin-top: 1rem;"><strong>Coursework:</strong> Robot Dynamics, Human–Robot Interaction, Computer Vision, Machine Learning for Robotics</p>
+                    <p style="margin-top: 0.5rem;"><strong>Award:</strong> Dr. Glenn Yee Graduate Student Tuition Award</p>
+                </div>
+
+                <div class="education-card">
+                    <h3>RV College of Engineering</h3>
+                    <div class="degree">Bachelor of Technology in Electronics & Communication Engineering</div>
+                    <p>Bengaluru, Karnataka, India</p>
+                    <p>November 2020 – July 2024</p>
+                    <p class="gpa">CGPA: 8.90/10.0</p>
+                    <p style="margin-top: 1rem;"><strong>Relevant Coursework:</strong> Mathematics for Machine Learning, Deep Learning, Control Engineering</p>
+                    <p style="margin-top: 0.5rem;"><strong>Leadership:</strong> President – Coding Club; Student Placement Coordinator; Head of Machine Learning division (Quantum Computing Research)</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Collaborations Section -->
+    <section id="collaborations" style="padding: 3rem 0;">
+        <div class="container">
+            <div class="section-header" style="color: var(--text-light);">
+                <h2>Research & Industry Collaborations</h2>
+                <div class="underline" style="background: var(--accent);"></div>
+            </div>
+
+            <!-- White logo container -->
+            <div class="collaboration-logos" style="background: #86aeea; padding: 1rem; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 2rem; border-radius: 10px; margin-top: 1.5rem;">
+                <div class="logo-item">
+                    <img src="Images/rvce_logo.png" alt="R V College of Engineering" style="height: 60px; object-fit: contain;">
+                </div>
+                <div class="logo-item">
+                    <img src="Images/nokia_logo.png" alt="Nokia Corporation" style="height: 60px; object-fit: contain;">
+                </div>
+                <div class="logo-item">
+                    <img src="Images/HPE_logo2.png" alt="Hewlett Packard Enterprise" style="height: 60px; object-fit: contain;">
+                </div>
+                <div class="logo-item">
+                    <img src="Images/DRDO_logo.png" alt="Defence Research and Development Organisation" style="height: 60px; object-fit: contain;">
+                </div>
+                <div class="logo-item">
+                    <img src="Images/IISc_logo.png" alt="Indian Institute of Science" style="height: 60px; object-fit: contain;">
+                </div>
+                <div class="logo-item">
+                    <img src="Images/WPI_logo.png" alt="Worcester Polytechnic Institute" style="height: 60px; object-fit: contain;">
+                </div>
+                    
+            </div>
+        </div>
+    </section>
+
+   <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 style="color: var(--text-light);">Let's Connect</h2>
+                <div class="underline"></div>
+            </div>
+
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+                I'm always open to discussing robotics, research opportunities, or collaborations.
+            </p>
+
+            <div class="contact-info">
+
+                <!-- Email -->
+                <div class="contact-item">
+                    <img src="Images/mail-pencil-svgrepo-com.svg" alt="Email Icon" class="contact-icon">
+                    <a href="mailto:divam.trivedi@gmail.com">divam.trivedi@gmail.com</a>
+                </div>
+
+                <!-- LinkedIn -->
+                <div class="contact-item">
+                    <img src="Images/linkedin-svgrepo-com.svg" alt="LinkedIn Icon" class="contact-icon">
+                    <a href="https://www.linkedin.com/in/divam-trivedi-62615516b/" target="_blank">LinkedIn</a>
+                </div>
+
+                <!-- GitHub -->
+                <div class="contact-item">
+                    <img src="Images/github-142-svgrepo-com.svg" alt="GitHub Icon" class="contact-icon">
+                    <a href="https://github.com/Divam-Trivedi" target="_blank">GitHub</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Divam Trivedi. Building intelligent robots that see, think, and act.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
