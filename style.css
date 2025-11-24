@@ -1,3 +1,161 @@
+/* ===== GLOBAL RESPONSIVE RULES ===== */
+
+html {
+    font-size: 100%;
+}
+
+@media (max-width: 1200px) {
+    html { font-size: 95%; }
+}
+
+@media (max-width: 992px) {
+    html { font-size: 90%; }
+}
+
+@media (max-width: 768px) {
+    html { font-size: 85%; }
+}
+
+@media (max-width: 480px) {
+    html { font-size: 80%; }
+}
+
+/* ===== HERO RESPONSIVE ===== */
+
+.hero {
+    padding: 6rem 1.5rem 2rem;
+    height: auto;
+    min-height: 100vh;
+}
+
+.profile-image {
+    width: 160px;
+    height: 160px;
+}
+
+.hero-content h1 {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+}
+
+.hero-content p {
+    font-size: clamp(1rem, 3.8vw, 1.4rem);
+}
+
+/* ===== NAVIGATION RESPONSIVE ===== */
+
+nav ul {
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    padding: 0 1rem;
+}
+
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.7rem;
+    }
+}
+
+/* ===== ABOUT SECTION ===== */
+
+.about-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.skills-grid {
+    grid-template-columns: 1fr;
+}
+
+/* ===== EXPERIENCE TIMELINE ===== */
+
+@media (max-width: 768px) {
+    .timeline {
+        padding-left: 1rem;
+    }
+
+    .timeline::before {
+        left: -0.2rem;
+    }
+
+    .timeline-item::before {
+        left: -1.3rem;
+    }
+}
+
+/* ===== PROJECTS ===== */
+
+.projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* ===== EDUCATION GRID ===== */
+
+.education-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+/* ===== SKILL LOGO CAROUSEL ===== */
+
+.skill-logo-carousel {
+    min-width: 80px;
+    height: 80px;
+}
+
+.skill-logo-carousel img {
+    width: 50px;
+    height: 50px;
+}
+
+/* For very small screens */
+@media (max-width: 480px) {
+    .skill-logo-carousel {
+        min-width: 65px;
+        height: 65px;
+    }
+    .skill-logo-carousel img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* ===== COLLAB LOGOS ===== */
+
+.collaboration-logos {
+    gap: 1.5rem;
+    padding: 1.5rem;
+}
+
+.logo-item img {
+    width: clamp(80px, 20vw, 130px);
+    height: auto;
+}
+
+/* ===== CONTACT ===== */
+
+.contact-info {
+    gap: 1rem;
+    flex-direction: column;
+}
+
+/* ===== CONTAINER ===== */
+
+.container {
+    padding: 3rem 1.5rem;
+}
+
+/* ===== SECTION HEADER ===== */
+
+.section-header h2 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 * {
     margin: 0;
     padding: 0;
