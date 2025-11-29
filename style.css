@@ -72,9 +72,11 @@ nav ul {
 
 @media (max-width: 600px) {
     nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.7rem;
+        flex-direction: row; /* keep links in one line */
+        justify-content: space-around;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        white-space: nowrap;
     }
 }
 
