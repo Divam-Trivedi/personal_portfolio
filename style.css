@@ -45,10 +45,12 @@ html {
     overflow-x: auto;
     white-space: nowrap;
     scrollbar-width: thin; /* Firefox */
+    flex-shrink: 0;
 }
 
 .nav-links {
     flex-wrap: nowrap;
+    flex-direction: row;
 }
 
 .navbar::-webkit-scrollbar {
