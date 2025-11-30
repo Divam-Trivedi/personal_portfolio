@@ -1,7 +1,11 @@
 /* ===== GLOBAL RESPONSIVE RULES ===== */
-
 html {
-    font-size: 100%;
+  font-size: 100%;
+}
+
+/* Add padding to prevent header overlap - dynamic based on nav height */
+body {
+  padding-top: 8vh;
 }
 
 /* Ensure desktop uses row, but doesn't accidentally affect mobile stacking rules */
@@ -10,200 +14,271 @@ html {
   gap: 1.5rem;
   font-weight: bold;
 }
+
 #nav-links li {
   list-style: none;
 }
+
 #nav-links a {
   display: inline-block;
 }
 
 @media (max-width: 1200px) {
-    html { font-size: 95%; }
+  html { font-size: 95%; }
 }
 
 @media (max-width: 992px) {
-    html { font-size: 90%; }
+  html { font-size: 90%; }
 }
 
 @media (max-width: 768px) {
-    html { font-size: 85%; }
+  html { font-size: 85%; }
+  body { padding-top: 8vh; } /* Match nav height */
 }
 
 @media (max-width: 480px) {
-    html { font-size: 80%; }
+  html { font-size: 80%; }
 }
 
 /* ===== HERO RESPONSIVE ===== */
-
 .hero {
-    padding: 6rem 1.5rem 2rem;
-    height: auto;
-    min-height: 100vh;
+  padding: 6rem 1.5rem 2rem;
+  height: auto;
+  min-height: 100vh;
 }
 
 .profile-image {
-    width: 160px;
-    height: 160px;
+  width: 160px;
+  height: 160px;
 }
 
 .hero-content h1 {
-    font-size: clamp(2rem, 6vw, 3.5rem);
+  font-size: clamp(2rem, 6vw, 3.5rem);
 }
 
 .hero-content p {
-    font-size: clamp(1rem, 3.8vw, 1.4rem);
+  font-size: clamp(1rem, 3.8vw, 1.4rem);
 }
 
 .navbar {
-    overflow-x: auto;
-    white-space: nowrap;
-    scrollbar-width: thin; /* Firefox */
-    flex-shrink: 0;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: thin; /* Firefox */
+  flex-shrink: 0;
 }
 
 .navbar::-webkit-scrollbar {
-    height: 6px;
+  height: 6px;
 }
 
 .navbar::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 4px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
 }
 
 /* ===== NAVIGATION ===== */
-
 /* Global list reset */
 #nav-links {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8vh; /* Takes 8% of viewport height */
+  background: rgba(10, 26, 47, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  padding: 0;
+  display: flex;
+  align-items: center;
 }
 
 /* Desktop navigation */
 .nav-container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-    display: flex;
-    justify-content: center; /* center nav items */
-    align-items: center;
-    position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 #nav-links {
-    display: flex;
-    gap: 1.5rem;
-    font-weight: bold;
+  display: flex;
+  gap: 1.5rem;
+  font-weight: bold;
 }
 
 #nav-links li {
-    list-style: none;
+  list-style: none;
 }
 
 #nav-links a {
-    text-decoration: none;
-    color: white;
-    display: inline-block;
+  text-decoration: none;
+  color: white;
+  display: inline-block;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+/* Hover and active state - golden color */
+#nav-links a:hover,
+#nav-links a:active,
+#nav-links a:focus {
+  color: #f0d3b4; /* Golden color */
+}
+
+/* Optional: Add underline animation on hover */
+#nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #e6b887;
+  transition: width 0.3s ease;
+}
+
+#nav-links a:hover::after {
+  width: 100%;
 }
 
 /* Logo spacer to keep center alignment */
 .logo-space {
-    width: 40px;
+  width: 40px;
 }
 
 /* Hamburger (desktop hidden) */
 .hamburger {
-    display: none;
+  display: none;
 }
 
 /* ================= MOBILE MENU ================= */
 @media (max-width: 768px) {
+  .logo-space {
+    display: none;
+  }
 
-    /* Hamburger visible */
-    .hamburger {
-        display: flex;
-        width: 18px;
-        height: 14px;
-        position: absolute;
-        right: 1rem;
-        flex-direction: column;
-        justify-content: space-between;
-        cursor: pointer;
-        z-index: 1002;
-        overflow: visible;
-    }
+  /* Hamburger visible */
+  .hamburger {
+    display: flex;
+    width: 22px;
+    height: 18px;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%); /* Center vertically in nav */
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    z-index: 1002;
+  }
+  
+  .hamburger span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: white;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
 
-    .hamburger span {
-        display: block;
-        height: 2.5px;
-        width: 100%;
-        background: white;
-        border-radius: 3px;
-        transition: transform 0.28s ease, opacity 0.28s ease;
-        transform-origin: center;
-    }
+  /* CRITICAL: Override desktop flex-direction */
+  #nav-links {
+    display: flex;
+    flex-direction: column; /* Forces vertical stacking */
+    align-items: flex-end;
+    justify-content: flex-start;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    padding-top: 80px;
+    padding-right: 2rem;
+    gap: clamp(1rem, 3vh, 2rem); /* Responsive gap based on viewport height */
+    background: rgba(10, 26, 47, 0.98);
+    font-weight: bold;
+    font-size: clamp(1rem, 4vh, 1.5rem); /* Responsive font size based on viewport height */
+    opacity: 0;
+    transition: right 0.4s ease, opacity 0.4s ease;
+    z-index: 1001;
+    overflow-y: auto; /* Allow scrolling if content is too tall */
+  }
 
-    /* Slide-in mobile menu */
-    #nav-links {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        justify-content: flex-start;
-        position: fixed;
-        top: 0;
-        right: -100%;  /* hidden offscreen initially */
-        width: 100%;
-        height: 100%;
-        padding-top: 120px;
-        padding-right: 2rem;
-        gap: 1.5rem;
-        background: #0a1a2f; /* full-screen blue overlay */
-        font-weight: bold;
-        font-size: 1.3rem;
-        opacity: 0;
-        transition: right 0.4s cubic-bezier(.2,.9,.2,1), opacity 0.32s ease;
-        z-index: 1000;
-        box-sizing: border-box;
-    }
+  #nav-links li {
+    width: auto;
+    text-align: right; /* Ensure right alignment */
+  }
 
-    #nav-links li {
-        width: 100%;
-    }
+  #nav-links a {
+    display: inline-block; /* Better for right alignment */
+    padding: 0.5rem 0;
+    text-align: right;
+    color: white;
+    white-space: nowrap; /* Prevent text wrapping */
+  }
 
-    #nav-links a {
-        display: block;
-        width: 100%;
-        padding: 0.2rem 0;
-        text-align: right;
-        color: white;
-    }
+  /* Active slide-in state */
+  #nav-links.active {
+    right: 0;
+    opacity: 1;
+  }
 
-    /* Active slide-in state */
-    #nav-links.active {
-        right: 0;
-        opacity: 1;
-    }
+  /* Hamburger X animation */
+  .hamburger.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .hamburger.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
 
-    /* Hamburger X animation */
-    .hamburger.active span:nth-child(1) {
-        transform: rotate(45deg) translateY(4px);
-    }
-    .hamburger.active span:nth-child(2) {
-        opacity: 0;
-        transform: scaleX(0);
-    }
-    .hamburger.active span:nth-child(3) {
-        transform: rotate(-45deg) translateY(-4px);
-    }
-
-    /* Prevent scrolling while menu open */
-    body.menu-open {
-        overflow: hidden;
-        height: 100%;
-    }
+  /* Prevent scrolling while menu open */
+  body.menu-open {
+    overflow: hidden;
+  }
 }
 
+/* Extra small screens - even smaller font */
+@media (max-width: 480px) {
+  #nav-links {
+    font-size: clamp(0.9rem, 3.5vh, 1.3rem);
+    padding-top: 70px;
+    gap: clamp(0.8rem, 2.5vh, 1.5rem);
+  }
+}
+
+/* Very short screens - compact spacing */
+@media (max-height: 600px) {
+  #nav-links {
+    padding-top: 60px;
+    gap: clamp(0.6rem, 2vh, 1rem);
+    font-size: clamp(0.85rem, 3vh, 1.2rem);
+  }
+}
+
+/* Extremely short screens */
+@media (max-height: 400px) {
+  #nav-links {
+    padding-top: 50px;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+  }
+}
 
 /* ===== ABOUT SECTION ===== */
 
