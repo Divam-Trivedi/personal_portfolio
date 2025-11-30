@@ -61,11 +61,6 @@ html {
     flex-shrink: 0;
 }
 
-.nav-links {
-    flex-wrap: nowrap;
-    flex-direction: row;
-}
-
 .navbar::-webkit-scrollbar {
     height: 6px;
 }
@@ -75,145 +70,138 @@ html {
     border-radius: 4px;
 }
 
-/* -------- DESKTOP NAVIGATION -------- */
-nav {
-    width: 100%;
-    padding: 1rem 0;
-    background: transparent;
+/* ===== NAVIGATION ===== */
+
+/* Global list reset */
+#nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
+/* Desktop navigation */
 .nav-container {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
-
     display: flex;
-    justify-content: center; /* Center items */
+    justify-content: center; /* center nav items */
     align-items: center;
     position: relative;
 }
 
-/* Keeps center alignment stable on desktop */
-.logo-space {
-    width: 40px;
-}
-
-/* Desktop menu */
 #nav-links {
     display: flex;
     gap: 1.5rem;
     font-weight: bold;
 }
 
-/* Hamburger default (hidden on desktop) */
+#nav-links li {
+    list-style: none;
+}
+
+#nav-links a {
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+}
+
+/* Logo spacer to keep center alignment */
+.logo-space {
+    width: 40px;
+}
+
+/* Hamburger (desktop hidden) */
 .hamburger {
     display: none;
-    width: 30px;
-    height: 22px;
-    flex-direction: column;
-    justify-content: space-between;
-    cursor: pointer;
-    position: absolute;
-    right: 1rem;
 }
 
-.hamburger span {
-    height: 4px;
-    width: 100%;
-    background: white;
-    border-radius: 4px;
-    transition: 0.3s ease;
-}
-
-/* -------- MOBILE NAVIGATION (with animations + slide-in) -------- */
+/* ================= MOBILE MENU ================= */
 @media (max-width: 768px) {
 
-  /* Smaller hamburger and ensure overflow is visible so X won't be clipped */
-  .hamburger {
-    display: flex;
-    width: 18px;          /* smaller width */
-    height: 14px;         /* smaller height */
-    right: 1rem;
-    position: absolute;
-    flex-direction: column;
-    justify-content: space-between;
-    cursor: pointer;
-    z-index: 1002;        /* above the panel */
-    overflow: visible;    /* IMPORTANT so transformed spans are visible */
-    -webkit-tap-highlight-color: transparent;
-  }
+    /* Hamburger visible */
+    .hamburger {
+        display: flex;
+        width: 18px;
+        height: 14px;
+        position: absolute;
+        right: 1rem;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+        z-index: 1002;
+        overflow: visible;
+    }
 
-  .hamburger span {
-    height: 2.5px;        /* thinner bars */
-    width: 100%;
-    background: white;
-    border-radius: 3px;
-    transition: transform 0.28s ease, opacity 0.28s ease;
-    transform-origin: center;
-    display: block;
-  }
+    .hamburger span {
+        display: block;
+        height: 2.5px;
+        width: 100%;
+        background: white;
+        border-radius: 3px;
+        transition: transform 0.28s ease, opacity 0.28s ease;
+        transform-origin: center;
+    }
 
-  /* Slide-in right panel */
-  #nav-links {
-    display: flex;                   /* ensure flex is applied */
-    flex-direction: column !important; /* force vertical stacking */
-    align-items: flex-end;           /* right-align the items */
-    justify-content: flex-start;
-    position: fixed;
-    top: 0;
-    right: -100%;                    /* start off-screen */
-    width: 100%;
-    height: 100%;
-    padding-top: 120px;
-    padding-right: 2rem;
-    gap: 1.5rem;
-    background: #0a1a2f;             /* blue overlay */
-    font-weight: bold;
-    font-size: 1.3rem;
-    transition: right 0.40s cubic-bezier(.2,.9,.2,1), opacity 0.32s ease;
-    opacity: 0;
-    z-index: 1000;
-    box-sizing: border-box;
-    -webkit-overflow-scrolling: touch;
-  }
+    /* Slide-in mobile menu */
+    #nav-links {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: flex-start;
+        position: fixed;
+        top: 0;
+        right: -100%;  /* hidden offscreen initially */
+        width: 100%;
+        height: 100%;
+        padding-top: 120px;
+        padding-right: 2rem;
+        gap: 1.5rem;
+        background: #0a1a2f; /* full-screen blue overlay */
+        font-weight: bold;
+        font-size: 1.3rem;
+        opacity: 0;
+        transition: right 0.4s cubic-bezier(.2,.9,.2,1), opacity 0.32s ease;
+        z-index: 1000;
+        box-sizing: border-box;
+    }
 
-  /* Make each list item occupy its own row and full width to avoid inline wrapping */
-  #nav-links li {
-    width: 100%;
-  }
-  #nav-links a {
-    display: block;
-    width: 100%;
-    padding: 0.2rem 0;
-    text-decoration: none;
-    color: inherit;
-    text-align: right;
-  }
+    #nav-links li {
+        width: 100%;
+    }
 
-  /* Slide-in active state */
-  #nav-links.active {
-    right: 0;
-    opacity: 1;
-  }
+    #nav-links a {
+        display: block;
+        width: 100%;
+        padding: 0.2rem 0;
+        text-align: right;
+        color: white;
+    }
 
-  /* Smaller, less aggressive X transforms so it doesn't go outside the hamburger bounds */
-  .hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translateY(4px);
-  }
-  .hamburger.active span:nth-child(2) {
-    opacity: 0;
-    transform: scaleX(0);
-  }
-  .hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translateY(-4px);
-  }
+    /* Active slide-in state */
+    #nav-links.active {
+        right: 0;
+        opacity: 1;
+    }
 
-  /* Prevent body scrolling while menu open */
-  body.menu-open {
-    overflow: hidden;
-    height: 100%;
-  }
+    /* Hamburger X animation */
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translateY(4px);
+    }
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translateY(-4px);
+    }
+
+    /* Prevent scrolling while menu open */
+    body.menu-open {
+        overflow: hidden;
+        height: 100%;
+    }
 }
 
 
