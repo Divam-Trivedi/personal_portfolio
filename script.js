@@ -86,3 +86,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     typeLetter();
 });
+
+// Animated hamburger + mobile slide-in menu
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("nav-links");
+
+hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navLinks.classList.toggle("active");
+    document.body.classList.toggle("menu-open"); // disable scrolling
+});
+
+// close mobile menu when clicking a nav link
+document.querySelectorAll('#nav-links a').forEach(a => {
+  a.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    navLinks.classList.remove('active');
+    document.body.classList.remove('menu-open');
+  });
+});

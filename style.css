@@ -4,6 +4,19 @@ html {
     font-size: 100%;
 }
 
+/* Ensure desktop uses row, but doesn't accidentally affect mobile stacking rules */
+#nav-links {
+  display: flex;
+  gap: 1.5rem;
+  font-weight: bold;
+}
+#nav-links li {
+  list-style: none;
+}
+#nav-links a {
+  display: inline-block;
+}
+
 @media (max-width: 1200px) {
     html { font-size: 95%; }
 }
@@ -62,23 +75,147 @@ html {
     border-radius: 4px;
 }
 
-/* ===== NAVIGATION RESPONSIVE ===== */
+/* -------- DESKTOP NAVIGATION -------- */
+nav {
+    width: 100%;
+    padding: 1rem 0;
+    background: transparent;
+}
 
-nav ul {
-    flex-wrap: wrap;
-    gap: 1.2rem;
+.nav-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 0 1rem;
+
+    display: flex;
+    justify-content: center; /* Center items */
+    align-items: center;
+    position: relative;
 }
 
-@media (max-width: 600px) {
-    nav ul {
-        flex-direction: row; /* keep links in one line */
-        justify-content: space-around;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        white-space: nowrap;
-    }
+/* Keeps center alignment stable on desktop */
+.logo-space {
+    width: 40px;
 }
+
+/* Desktop menu */
+#nav-links {
+    display: flex;
+    gap: 1.5rem;
+    font-weight: bold;
+}
+
+/* Hamburger default (hidden on desktop) */
+.hamburger {
+    display: none;
+    width: 30px;
+    height: 22px;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    position: absolute;
+    right: 1rem;
+}
+
+.hamburger span {
+    height: 4px;
+    width: 100%;
+    background: white;
+    border-radius: 4px;
+    transition: 0.3s ease;
+}
+
+/* -------- MOBILE NAVIGATION (with animations + slide-in) -------- */
+@media (max-width: 768px) {
+
+  /* Smaller hamburger and ensure overflow is visible so X won't be clipped */
+  .hamburger {
+    display: flex;
+    width: 18px;          /* smaller width */
+    height: 14px;         /* smaller height */
+    right: 1rem;
+    position: absolute;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    z-index: 1002;        /* above the panel */
+    overflow: visible;    /* IMPORTANT so transformed spans are visible */
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .hamburger span {
+    height: 2.5px;        /* thinner bars */
+    width: 100%;
+    background: white;
+    border-radius: 3px;
+    transition: transform 0.28s ease, opacity 0.28s ease;
+    transform-origin: center;
+    display: block;
+  }
+
+  /* Slide-in right panel */
+  #nav-links {
+    display: flex;                   /* ensure flex is applied */
+    flex-direction: column !important; /* force vertical stacking */
+    align-items: flex-end;           /* right-align the items */
+    justify-content: flex-start;
+    position: fixed;
+    top: 0;
+    right: -100%;                    /* start off-screen */
+    width: 100%;
+    height: 100%;
+    padding-top: 120px;
+    padding-right: 2rem;
+    gap: 1.5rem;
+    background: #0a1a2f;             /* blue overlay */
+    font-weight: bold;
+    font-size: 1.3rem;
+    transition: right 0.40s cubic-bezier(.2,.9,.2,1), opacity 0.32s ease;
+    opacity: 0;
+    z-index: 1000;
+    box-sizing: border-box;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Make each list item occupy its own row and full width to avoid inline wrapping */
+  #nav-links li {
+    width: 100%;
+  }
+  #nav-links a {
+    display: block;
+    width: 100%;
+    padding: 0.2rem 0;
+    text-decoration: none;
+    color: inherit;
+    text-align: right;
+  }
+
+  /* Slide-in active state */
+  #nav-links.active {
+    right: 0;
+    opacity: 1;
+  }
+
+  /* Smaller, less aggressive X transforms so it doesn't go outside the hamburger bounds */
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translateY(4px);
+  }
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-4px);
+  }
+
+  /* Prevent body scrolling while menu open */
+  body.menu-open {
+    overflow: hidden;
+    height: 100%;
+  }
+}
+
 
 /* ===== ABOUT SECTION ===== */
 
