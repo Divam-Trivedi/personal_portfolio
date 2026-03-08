@@ -149,7 +149,7 @@ nav {
     display: none;
     position: absolute;
     top: 100%;
-    padding-left: 0.5rem;
+    /* padding-left: 0.5rem; */
     left: 0;
     background: var(--secondary);
     min-width: 180px;
