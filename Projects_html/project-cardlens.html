@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CardLens | Divam Trivedi</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="projects.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo-space"></div>
+            <ul id="nav-links">
+                <li><a href="../index.html#home">Home</a></li>
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#skills-logos">Skills</a></li>
+                <li><a href="../index.html#experience">Experience</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="../index.html#education">Education</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+                <li class="dropdown">
+                    <a href="#">Others ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../creativity.html">Creativity</a></li>
+                        <li><a href="../certificates.html">Certifications</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <div class="project-detail-hero">
+        <div class="container">
+            <div class="project-breadcrumb">
+                <a href="projects.html">Projects</a> &nbsp;/&nbsp; <a href="projects.html#software">Software</a> &nbsp;/&nbsp; CardLens
+            </div>
+            <div class="hero-meta">
+                <span class="proj-domain sw">Software</span>
+                <span class="proj-year">2025</span>
+            </div>
+            <h1>CardLens — Credit Card Rewards Analyzer</h1>
+            <p class="hero-desc">A personal finance web app that parses PDF bank statements, auto-categorizes transactions using AI, and calculates exactly how much cash back, points, or miles you earned — across 19 pre-loaded cards from four major banks.</p>
+            <div class="tech-tags">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">AI Categorization</span>
+                <span class="tech-tag">PDF Parsing</span>
+                <span class="tech-tag">Authentication</span>
+                <span class="tech-tag">Data Visualization</span>
+                <span class="tech-tag">Vercel</span>
+                <span class="tech-tag">Deployed</span>
+            </div>
+        </div>
+    </div>
+
+    <section class="project-detail-body">
+        <div class="container">
+            <a href="projects.html#software" class="back-link">← Back to Projects</a>
+            <div class="detail-grid">
+                <div class="detail-main">
+
+                    <section>
+                        <h2>Overview</h2>
+                        <p>CardLens is a personal finance tool built to answer a question most credit card users never bother calculating: <em>how much am I actually earning from my rewards?</em> Users upload PDF statements from their credit cards and CardLens handles everything — extracting every transaction, categorizing it, and computing the exact rewards earned based on each card's specific reward structure.</p>
+                        <p>It currently supports American Express, Bank of America, Chase, and Capital One, with 19 pre-loaded cards each configured with their full reward rules.</p>
+                    </section>
+
+                    <section>
+                        <h2>Key Features</h2>
+                        <p><strong>PDF Statement Parsing:</strong> Upload statements directly from your bank — CardLens automatically extracts every transaction including merchant, amount, date, and category without any manual entry.</p>
+                        <p><strong>AI Categorization:</strong> Each transaction is categorized using AI, mapping purchases to reward-relevant categories (dining, travel, groceries, etc.) to accurately apply each card's reward multipliers.</p>
+                        <p><strong>Rewards Computation:</strong> The engine calculates exact cash back, points, or miles earned per transaction and per statement period — not estimates, but precise figures based on the card's actual reward structure.</p>
+                        <p><strong>Spending Dashboard:</strong> Visual breakdowns of spending by category and merchant using pie charts and bar graphs. Filterable by card, month, or year. Drill down into individual transactions, search by merchant, and sort by amount or date.</p>
+                        <p><strong>Wallet Management:</strong> A dedicated Wallet page lets users choose which of the 19 pre-configured cards they hold. Each card comes with its full reward rules pre-loaded — no manual configuration needed.</p>
+                        <p><strong>Statements Page:</strong> A clean view of every uploaded statement showing the billing period, total spend, and total rewards earned at a glance.</p>
+                        <p><strong>Secure Authentication:</strong> All data is tied to a personal account — only you can see your financial information. A full reset option is available for a clean slate.</p>
+                    </section>
+
+                    <section>
+                        <h2>Technical Approach</h2>
+                        <p><strong>PDF Parsing Pipeline:</strong> Statements from different banks have different formats and layouts. A robust parsing layer handles each bank's format individually, extracting structured transaction data reliably across Amex, Chase, Bank of America, and Capital One.</p>
+                        <p><strong>Reward Rules Engine:</strong> Each card's reward structure is encoded as a configurable rule set — handling tiered rewards, category multipliers, and flat-rate cash back. The engine maps AI-categorized transactions to the correct multiplier automatically.</p>
+                        <p><strong>Data Visualization:</strong> Interactive charts give users a clear picture of where their money goes and how their rewards stack up across cards and time periods.</p>
+                        <p><strong>Deployment:</strong> The app is live and deployed on Vercel with secure user authentication ensuring financial data stays private.</p>
+                    </section>
+
+                    <section>
+                        <h2>Results</h2>
+                        <div class="results-grid">
+                            <div class="result-box"><span class="result-val">19</span><span class="result-label">Pre-loaded cards</span></div>
+                            <div class="result-box"><span class="result-val">4</span><span class="result-label">Major banks supported</span></div>
+                            <div class="result-box"><span class="result-val">Live</span><span class="result-label">Deployed on Vercel</span></div>
+                        </div>
+                        <p>CardLens is live and fully functional. Users can upload real statements and get an accurate picture of their rewards earnings across all their cards in one place.</p>
+                    </section>
+
+                    <section>
+                        <h2>Media</h2>
+                        <div class="media-placeholder">
+                            <span class="media-icon">🎥</span>
+                            Demo video and screenshots coming soon.
+                        </div>
+                    </section>
+
+                </div>
+
+                <aside class="detail-sidebar">
+                    <div class="sidebar-card">
+                        <h4>Key Stats</h4>
+                        <div class="sidebar-stat"><strong>Live</strong><span><a href="https://cardlens-beryl.vercel.app" target="_blank">cardlens-beryl.vercel.app</a></span></div>
+                        <div class="sidebar-stat"><strong>Banks</strong><span>Amex, Chase, BofA, Capital One</span></div>
+                        <div class="sidebar-stat"><strong>Cards</strong><span>19 pre-configured</span></div>
+                    </div>
+                    <div class="sidebar-card">
+                        <h4>Domain</h4>
+                        <p>Web Development • Personal Finance • AI</p>
+                    </div>
+                    <div class="sidebar-card">
+                        <h4>Affiliation</h4>
+                        <p>Personal Project</p>
+                    </div>
+                    <div class="sidebar-card">
+                        <h4>Status</h4>
+                        <p>🟢 Live & Active</p>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Divam Trivedi. Building intelligent robots that see, think, and act.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
