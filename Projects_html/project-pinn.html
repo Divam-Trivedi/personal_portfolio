@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PINN for Motion Prediction | Divam Trivedi</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="projects.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo-space"></div>
+            <ul id="nav-links">
+                <li><a href="../index.html#home">Home</a></li>
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#skills-logos">Skills</a></li>
+                <li><a href="../index.html#experience">Experience</a></li>
+                <li><a href="../projects.html" class="active">Projects</a></li>
+                <li><a href="../index.html#education">Education</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+                <li class="dropdown">
+                    <a href="#">Others ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../creativity.html">Creativity</a></li>
+                        <li><a href="../certificates.html">Certifications</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <div class="project-detail-hero">
+        <div class="container">
+            <div class="project-breadcrumb">
+                <a href="projects.html">Projects</a> &nbsp;/&nbsp; <a href="projects.html#simulation">Simulation</a> &nbsp;/&nbsp; PINN for Motion Prediction
+            </div>
+            <div class="hero-meta">
+                <span class="proj-domain sim">Simulation</span>
+                <span class="proj-year">Jan – Feb 2025</span>
+            </div>
+            <h1>Physics-Informed Neural Network for Object Motion Prediction</h1>
+            <p class="hero-desc">PINN models incorporating physical priors for predicting object motion under push/pluck manipulation — improving simulation fidelity and generalization.</p>
+            <div class="tech-tags"><span class="tech-tag">TensorFlow</span><span class="tech-tag">PINN</span><span class="tech-tag">Physics-Informed ML</span><span class="tech-tag">Python</span><span class="tech-tag">Manipulation</span><span class="tech-tag">Simulation</span></div>
+        </div>
+    </div>
+
+    <section class="project-detail-body">
+        <div class="container">
+            <a href="projects.html#simulation" class="back-link">← Back to Projects</a>
+            <div class="detail-grid">
+                <div class="detail-main">
+
+                    <section>
+                        <h2>Overview</h2>
+                        <p>Physics-Informed Neural Networks embed known physical laws directly into the training process via the loss function, constraining model predictions to be consistent with dynamics equations. This project applies PINNs to the problem of predicting object motion under robotic push and pluck manipulation actions.</p>
+                    </section>
+
+                    <section>
+                        <h2>Approach</h2>
+                        <p><strong>Physical Prior Integration:</strong> The equations of motion (Newton-Euler dynamics, friction models) are incorporated as soft constraints in the PINN loss function alongside the data-fitting loss. This forces the network to learn representations consistent with known physics, improving extrapolation beyond the training distribution.</p><p><strong>Feature Engineering:</strong> Engineered features encoding contact geometry, mass distribution estimates, and surface material properties are used as network inputs to inform predictions.</p><p><strong>Push/Pluck Scenarios:</strong> The model was trained and validated on simulated push and pluck manipulation scenarios with diverse object geometries and surface types.</p>
+                    </section>
+
+                    <section>
+                        <h2>Results</h2>
+                        <div class="results-grid"><div class="result-box"><span class="result-val">PINN</span><span class="result-label">Physics constraints</span></div><div class="result-box"><span class="result-val">Push/Pluck</span><span class="result-label">Manipulation scenarios</span></div><div class="result-box"><span class="result-val">Improved</span><span class="result-label">Sim fidelity</span></div></div>
+                        <p>PINN models demonstrated improved simulation fidelity compared to pure data-driven baselines, particularly in out-of-distribution scenarios with novel object masses and friction coefficients. Physical constraints prevented unphysical predictions common in unconstrained neural nets.</p>
+                    </section>
+
+                    <section>
+                        <h2>Media</h2>
+                        <div class="media-placeholder">
+                            <span class="media-icon">🎥</span>
+                            Demo video and project images coming soon.
+                        </div>
+                    </section>
+
+                </div>
+
+                <aside class="detail-sidebar">
+                    <div class="sidebar-card">
+                        <h4>Key Stats</h4>
+                        <div class="sidebar-stat"><strong>PINN</strong><span>Physics-constrained</span></div><div class="sidebar-stat"><strong>Generalizes</strong><span>Out-of-distribution</span></div>
+                    </div>
+                    <div class="sidebar-card">
+                        <h4>Domain</h4>
+                        <p>Physics-Informed ML • Manipulation • Simulation</p>
+                    </div>
+                    <div class="sidebar-card">
+                        <h4>Affiliation</h4>
+                        <p>WPI</p>
+                    </div>
+                    <div class="sidebar-card">
+                        <h4>Status</h4>
+                        <p>🔵 Completed</p>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Divam Trivedi. Building intelligent robots that see, think, and act.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

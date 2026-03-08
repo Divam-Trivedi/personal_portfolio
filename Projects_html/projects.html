@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Divam Trivedi</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="projects.css">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SSMPVZ1XWN"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SSMPVZ1XWN');
+    </script>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo-space"></div>
+            <ul id="nav-links">
+                <li><a href="../index.html#home">Home</a></li>
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#skills-logos">Skills</a></li>
+                <li><a href="../index.html#experience">Experience</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="../index.html#education">Education</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+                <li class="dropdown">
+                    <a href="#">Others ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../creativity.html">Creativity</a></li>
+                        <li><a href="../certificates.html">Certifications</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="page-hero-content">
+            <p class="page-hero-eyebrow">My Work</p>
+            <h1>Projects</h1>
+            <p class="page-hero-sub">From hardware robots to simulation frameworks to deployed software — a collection of things I've built and broken (and fixed).</p>
+        </div>
+        <div class="hero-grid-bg"></div>
+    </section>
+
+    <!-- Tab Navigation -->
+    <section class="projects-section">
+        <div class="container">
+
+            <div class="tab-bar">
+                <button class="tab-btn active" data-tab="hardware">
+                    <span class="tab-icon">⚙️</span>
+                    <span>Hardware</span>
+                    <span class="tab-count" id="count-hardware"></span>
+                </button>
+                <button class="tab-btn" data-tab="simulation">
+                    <span class="tab-icon">🖥️</span>
+                    <span>Simulation</span>
+                    <span class="tab-count" id="count-simulation"></span>
+                </button>
+                <button class="tab-btn" data-tab="software">
+                    <span class="tab-icon">🌐</span>
+                    <span>Software</span>
+                    <span class="tab-count" id="count-software"></span>
+                </button>
+            </div>
+
+            <!-- Hardware Projects -->
+            <div class="tab-content active" id="tab-hardware">
+                <div class="projects-grid-full">
+
+                    <a href="project-nursing-robot.html" class="proj-card">
+                        <div class="proj-card-accent"></div>
+                        <div class="proj-card-inner">
+                            <div class="proj-meta">
+                                <span class="proj-domain hw">Hardware</span>
+                                <span class="proj-year">2025 – Present</span>
+                            </div>
+                            <h3>Nursing Robot Perception Stack</h3>
+                            <p>End-to-end perception system for a bi-manual mobile nurse assistant — multi-camera calibration, depth fusion, object recognition, and shared autonomy on Jetson Nano.</p>
+                            <div class="proj-stats">
+                                <span class="stat"><strong>&lt;5%</strong> pose error</span>
+                                <span class="stat"><strong>~60%</strong> less manual intervention</span>
+                            </div>
+                            <div class="tech-tags">
+                                <span class="tech-tag">ROS2</span>
+                                <span class="tech-tag">PyTorch</span>
+                                <span class="tech-tag">Jetson Nano</span>
+                                <span class="tech-tag">Intel RealSense</span>
+                            </div>
+                            <div class="proj-arrow">View Project →</div>
+                        </div>
+                    </a>
+
+                    <a href="project-pose-estimation.html" class="proj-card">
+                        <div class="proj-card-accent"></div>
+                        <div class="proj-card-inner">
+                            <div class="proj-meta">
+                                <span class="proj-domain hw">Hardware</span>
+                                <span class="proj-year">Nov 2024 – Present</span>
+                            </div>
+                            <h3>6-DoF Pose Estimation for Medical Objects</h3>
+                            <p>Marker-less 6-DoF pose estimator using vision-only pipeline and multi-view fusion for bottles, syringes, and trays — no physical markers needed.</p>
+                            <div class="proj-stats">
+                                <span class="stat"><strong>~30%</strong> less setup time</span>
+                                <span class="stat"><strong>~2.0s/frame</strong> on Jetson</span>
+                            </div>
+                            <div class="tech-tags">
+                                <span class="tech-tag">PyTorch</span>
+                                <span class="tech-tag">TensorFlow</span>
+                                <span class="tech-tag">RealSense D435</span>
+                                <span class="tech-tag">ROS2</span>
+                            </div>
+                            <div class="proj-arrow">View Project →</div>
+                        </div>
+                    </a>
+
+                    <a href="project-crazyflie.html" class="proj-card">
+                        <div class="proj-card-accent"></div>
+                        <div class="proj-card-inner">
+                            <div class="proj-meta">
+                                <span class="proj-domain hw">Hardware</span>
+                                <span class="proj-year">Dec 2024 – Feb 2025</span>
+                            </div>
+                            <h3>CrazyFlie 2.0 Quadrotor Control</h3>
+                            <p>Cascaded PD and LQR controllers for a physical quadrotor with polynomial trajectory generation. Achieved sim-to-real transfer with under 7mm flight RMSE.</p>
+                            <div class="proj-stats">
+                                <span class="stat"><strong>&lt;3mm</strong> sim trajectory error</span>
+                                <span class="stat"><strong>&lt;7mm</strong> real-world RMSE</span>
+                            </div>
+                            <div class="tech-tags">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">MATLAB</span>
+                                <span class="tech-tag">LQR</span>
+                                <span class="tech-tag">PD Control</span>
+                            </div>
+                            <div class="proj-arrow">View Project →</div>
+                        </div>
+                    </a>
+
+                    <a href="project-quadruped.html" class="proj-card">
+                        <div class="proj-card-accent"></div>
+                        <div class="proj-card-inner">
+                            <div class="proj-meta">
+                                <span class="proj-domain hw">Hardware</span>
+                                <span class="proj-year">Jun – Oct 2023</span>
+                            </div>
+                            <h3>Gait Planning for Quadruped Robot</h3>
+                            <p>Inverse kinematics and adaptive gait controllers deployed on Raspberry Pi, improving stability on uneven terrain and dynamic balance under perturbations.</p>
+                            <div class="proj-stats">
+                                <span class="stat"><strong>~30%</strong> better terrain stability</span>
+                                <span class="stat"><strong>5%</strong> positional error</span>
+                            </div>
+                            <div class="tech-tags">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Raspberry Pi</span>
+                                <span class="tech-tag">ROS2</span>
+                                <span class="tech-tag">PyBullet</span>
+                            </div>
+                            <div class="proj-arrow">View Project →</div>
+                        </div>
+                    </a>
+
+                    <a href="project-openmanipulator.html" class="proj-card">
+                        <div class="proj-card-accent"></div>
+                        <div class="proj-card-inner">
+                            <div class="proj-meta">
+                                <span class="proj-domain hw">Hardware</span>
+                                <span class="proj-year">Oct – Dec 2024</span>
+                            </div>
+                            <h3>Dynamic Control of OpenManipulator X</h3>
+                            <p>LSPB trajectory planning and PD joint control for a 6-DOF manipulator arm. Torque estimation validated within 5% of measured values using motor current profiles.</p>
+                            <div class="proj-stats">
+                                <span class="stat"><strong>&lt;5%</strong> path tracking error</span>
+                                <span class="stat"><strong>~5%</strong> torque accuracy</span>
+                            </div>
+                            <div class="tech-tags">
+                                <span class="tech-tag">ROS2</span>
+                                <span class="tech-tag">MATLAB</span>
+                                <span class="tech-tag">LSPB</span>
+                                <span class="tech-tag">PD Control</span>
+                            </div>
+                            <div class="proj-arrow">View Project →</div>
+                        </div>
+                    </a>
+
+                    <a href="project-cone-calorimeter.html" class="proj-card">
+                        <div class="proj-card-accent"></div>
+                        <div class="proj-card-inner">
+                            <div class="proj-meta">
+                                <span class="proj-domain hw">Hardware</span>
+                                <span class="proj-year">Oct – Nov 2025</span>
+                            </div>
+                            <h3>Cone Calorimeter HRR Computation</h3>
+                            <p>Full software pipeline to calibrate 14+ sensors and compute Heat Release Rate in real time using oxygen-consumption calorimetry with live monitoring dashboards.</p>
+                            <div class="proj-stats">
+                                <span class="stat"><strong>&gt;30%</strong> faster calibration</span>
+                                <span class="stat"><strong>14+</strong> sensors</span>
+                            </div>
+                            <div class="tech-tags">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">NumPy</span>
+                                <span class="tech-tag">SciPy</span>
+                                <span class="tech-tag">Pandas</span>
+                            </div>
+                            <div class="proj-arrow">View Project →</div>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+
+            <!-- Simulation Projects -->
+            <div class="tab-content" id="tab-simulation">
+                <div class="projects-grid-full">
+
+                    <a href="project-rl-ur10.html" class="proj-card">
+                        <div class="proj-card-accent"></div>
+                        <div class="proj-card-inner">
+                            <div class="proj-meta">
+                                <span class="proj-domain sim">Simulation</span>
+                                <span class="proj-year">Feb – Apr 2025</span>
+                            </div>
+                            <h3>RL Control for UR10 Robot</h3>
+                            <p>DDPG and A3C implemented from scratch for pick-and-place manipulation on a simulated UR10. Includes imitation learning pipeline for peg-in-hole tasks.</p>
+                            <div class="proj-stats">
+                                <span class="stat"><strong>~85%</strong> DDPG success rate</span>
+                                <span class="stat"><strong>~55%</strong> IL baseline</span>
+                            </div>
+                            <div class="tech-tags">
+                                <span class="tech-tag">PyTorch</span>
+                                <span class="tech-tag">DDPG</span>
+                                <span class="tech-tag">A3C</span>
+                                <span class="tech-tag">Gym</span>
+                            </div>
+                            <div class="proj-arrow">View Project →</div>
+                        </div>
+                    </a>
+
+                    <a href="project-act.html" class="proj-card">
+                        <div class="proj-card-accent"></div>
+                        <div class="proj-card-inner">
+                            <div class="proj-meta">
+                                <span class="proj-domain sim">Simulation</span>
+                                <span class="proj-year">Mar – May 2025</span>
+                            </div>
+                            <h3>Imitation Learning with ACT + Transformers</h3>
+                            <p>Action Chunking Transformer with VAE latent encoding trained on expert demonstrations. Outperforms behavior cloning by 30% on constrained peg placement.</p>
+                            <div class="proj-stats">
+                                <span class="stat"><strong>+30%</strong> over BC baseline</span>
+                                <span class="stat">Generalizes to unseen configs</span>
+                            </div>
+                            <div class="tech-tags">
+                                <span class="tech-tag">Transformers</span>
+                                <span class="tech-tag">VAE</span>
+                                <span class="tech-tag">PyTorch</span>
+                                <span class="tech-tag">Imitation Learning</span>
+                            </div>
+                            <div class="proj-arrow">View Project →</div>
+                        </div>
+                    </a>
+
+                    <a href="project-vio.html" class="proj-card">
+                        <div class="proj-card-accent"></div>
+                        <div class="proj-card-inner">
+                            <div class="proj-meta">
+                                <span class="proj-domain sim">Simulation</span>
+                                <span class="proj-year">Dec 2024 – Jan 2025</span>
+                            </div>
+                            <h3>Visual-Inertial Odometry & Synthetic Dataset</h3>
+                            <p>10,000+ frame synthetic Vision+IMU dataset created in Blender. MSCKF filter + deep fusion network achieving &lt;5% trajectory error, 20% better than vision-only.</p>
+                            <div class="proj-stats">
+                                <span class="stat"><strong>&lt;5%</strong> trajectory error</span>
+                                <span class="stat"><strong>+20%</strong> vs vision-only</span>
+                            </div>
+                            <div class="tech-tags">
+                                <span class="tech-tag">MSCKF</span>
+                                <span class="tech-tag">Blender</span>
+                                <span class="tech-tag">PyTorch</span>
+                                <span class="tech-tag">IMU Fusion</span>
+                            </div>
+                            <div class="proj-arrow">View Project →</div>
+                        </div>
+                    </a>
+
+                    <a href="project-gesture-robot.html" class="proj-card">
+                        <div class="proj-card-accent"></div>
+                        <div class="proj-card-inner">
+                            <div class="proj-meta">
+                                <span class="proj-domain sim">Simulation</span>
+                                <span class="proj-year">Sep – Nov 2024</span>
+                            </div>
+                            <h3>Gesture-Controlled Robot for Accessibility</h3>
+                            <p>Simulation and control stack enabling non-verbal gesture control of a robot in Gazebo. Customizable gesture mapping with 90%+ detection accuracy.</p>
+                            <div class="proj-stats">
+                                <span class="stat"><strong>&gt;90%</strong> gesture accuracy</span>
+                                <span class="stat"><strong>~40%</strong> faster adaptation</span>
+                            </div>
+                            <div class="tech-tags">
+                                <span class="tech-tag">ROS2</span>
+                                <span class="tech-tag">Gazebo</span>
+                                <span class="tech-tag">MediaPipe</span>
+                                <span class="tech-tag">OpenCV</span>
+                            </div>
+                            <div class="proj-arrow">View Project →</div>
+                        </div>
+                    </a>
+
+                    <a href="project-homography.html" class="proj-card">
+                        <div class="proj-card-accent"></div>
+                        <div class="proj-card-inner">
+                            <div class="proj-meta">
+                                <span class="proj-domain sim">Simulation</span>
+                                <span class="proj-year">Jan – Feb 2025</span>
+                            </div>
+                            <h3>Homography & Panoramic Stitching</h3>
+                            <p>Classical ANMS + RANSAC pipeline alongside HomographyNet trained on MSCOCO. Unified library for high-quality panorama stitching achieving ~1.5px RMSE.</p>
+                            <div class="proj-stats">
+                                <span class="stat"><strong>~1.5px</strong> RMSE classical</span>
+                                <span class="stat"><strong>~2px</strong> deep homography</span>
+                            </div>
+                            <div class="tech-tags">
+                                <span class="tech-tag">OpenCV</span>
+                                <span class="tech-tag">HomographyNet</span>
+                                <span class="tech-tag">PyTorch</span>
+                                <span class="tech-tag">RANSAC</span>
+                            </div>
+                            <div class="proj-arrow">View Project →</div>
+                        </div>
+                    </a>
+
+                    <a href="project-boundary-detection.html" class="proj-card">
+                        <div class="proj-card-accent"></div>
+                        <div class="proj-card-inner">
+                            <div class="proj-meta">
+                                <span class="proj-domain sim">Simulation</span>
+                                <span class="proj-year">Feb – Mar 2025</span>
+                            </div>
+                            <h3>Hybrid Boundary Detection & Classification</h3>
+                            <p>Two-phase pipeline fusing classical filters (DoG, Gabor, Canny) with CNN backbones. DenseNet achieved 92.5% CIFAR-10 accuracy using 30% fewer parameters.</p>
+                            <div class="proj-stats">
+                                <span class="stat"><strong>92.5%</strong> CIFAR-10 accuracy</span>
+                                <span class="stat"><strong>30%</strong> fewer params</span>
+                            </div>
+                            <div class="tech-tags">
+                                <span class="tech-tag">OpenCV</span>
+                                <span class="tech-tag">DenseNet</span>
+                                <span class="tech-tag">PyTorch</span>
+                                <span class="tech-tag">ResNet</span>
+                            </div>
+                            <div class="proj-arrow">View Project →</div>
+                        </div>
+                    </a>
+
+                    <a href="project-av-dashboard.html" class="proj-card">
+                        <div class="proj-card-accent"></div>
+                        <div class="proj-card-inner">
+                            <div class="proj-meta">
+                                <span class="proj-domain sim">Simulation</span>
+                                <span class="proj-year">Apr – May 2025</span>
+                            </div>
+                            <h3>Autonomous Vehicle Visualization Dashboard</h3>
+                            <p>12 FPS dashboard overlaying lanes, vehicles, pedestrians, and collision highlights on Tesla Model S streams. 3D classification, pose estimation, and motion segmentation.</p>
+                            <div class="proj-stats">
+                                <span class="stat"><strong>12 FPS</strong> real-time overlay</span>
+                                <span class="stat">Full collision prediction</span>
+                            </div>
+                            <div class="tech-tags">
+                                <span class="tech-tag">YOLO</span>
+                                <span class="tech-tag">RAFT</span>
+                                <span class="tech-tag">OpenPose</span>
+                                <span class="tech-tag">Blender</span>
+                            </div>
+                            <div class="proj-arrow">View Project →</div>
+                        </div>
+                    </a>
+
+                    <a href="project-pinn.html" class="proj-card">
+                        <div class="proj-card-accent"></div>
+                        <div class="proj-card-inner">
+                            <div class="proj-meta">
+                                <span class="proj-domain sim">Simulation</span>
+                                <span class="proj-year">Jan – Feb 2025</span>
+                            </div>
+                            <h3>Physics-Informed Neural Network for Motion</h3>
+                            <p>PINN models for predicting object motion under manipulation — incorporating physical priors and engineered features for push/pluck manipulation scenarios.</p>
+                            <div class="proj-stats">
+                                <span class="stat">Improved sim fidelity</span>
+                                <span class="stat">Physics-constrained</span>
+                            </div>
+                            <div class="tech-tags">
+                                <span class="tech-tag">TensorFlow</span>
+                                <span class="tech-tag">PINN</span>
+                                <span class="tech-tag">Python</span>
+                            </div>
+                            <div class="proj-arrow">View Project →</div>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+
+            <!-- Software Projects -->
+            <div class="tab-content" id="tab-software">
+                <div class="projects-grid-full">
+
+                    <a href="project-portfolio.html" class="proj-card">
+                        <div class="proj-card-accent"></div>
+                        <div class="proj-card-inner">
+                            <div class="proj-meta">
+                                <span class="proj-domain sw">Software</span>
+                                <span class="proj-year">2025 – Present</span>
+                            </div>
+                            <h3>Personal Portfolio Website</h3>
+                            <p>This site — a fully custom, deployed robotics portfolio with animated carousels, responsive nav, contact form, and Google Analytics. Built from scratch without frameworks.</p>
+                            <div class="proj-stats">
+                                <span class="stat">Live at divamtrivedi.com</span>
+                                <span class="stat">Fully responsive</span>
+                            </div>
+                            <div class="tech-tags">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">Deployed</span>
+                            </div>
+                            <div class="proj-arrow">View Project →</div>
+                        </div>
+                    </a>
+
+                    <!-- Flexible "coming soon" placeholder -->
+                    <div class="proj-card proj-card-placeholder">
+                        <div class="proj-card-inner placeholder-inner">
+                            <div class="placeholder-icon">＋</div>
+                            <h3>More Coming Soon</h3>
+                            <p>New software projects are in the works. Check back soon or reach out if you'd like to collaborate.</p>
+                            <a href="index.html#contact" class="btn" style="margin-top:1rem; display:inline-block;">Get in Touch</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Divam Trivedi. Building intelligent robots that see, think, and act.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="projects.js"></script>
+</body>
+</html>

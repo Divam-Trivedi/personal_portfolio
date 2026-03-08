@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gesture-Controlled Robot | Divam Trivedi</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="projects.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo-space"></div>
+            <ul id="nav-links">
+                <li><a href="../index.html#home">Home</a></li>
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#skills-logos">Skills</a></li>
+                <li><a href="../index.html#experience">Experience</a></li>
+                <li><a href="../projects.html" class="active">Projects</a></li>
+                <li><a href="../index.html#education">Education</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+                <li class="dropdown">
+                    <a href="#">Others ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../creativity.html">Creativity</a></li>
+                        <li><a href="../certificates.html">Certifications</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <div class="project-detail-hero">
+        <div class="container">
+            <div class="project-breadcrumb">
+                <a href="projects.html">Projects</a> &nbsp;/&nbsp; <a href="projects.html#simulation">Simulation</a> &nbsp;/&nbsp; Gesture-Controlled Robot
+            </div>
+            <div class="hero-meta">
+                <span class="proj-domain sim">Simulation</span>
+                <span class="proj-year">Sep – Nov 2024</span>
+            </div>
+            <h1>Gesture-Controlled Robot for Accessibility</h1>
+            <p class="hero-desc">A ROS2+Gazebo simulation stack enabling non-verbal gesture control of a robot, with a customizable gesture-mapping interface and 90%+ detection accuracy.</p>
+            <div class="tech-tags"><span class="tech-tag">ROS2</span><span class="tech-tag">Gazebo</span><span class="tech-tag">MediaPipe</span><span class="tech-tag">OpenCV</span><span class="tech-tag">Python</span><span class="tech-tag">Accessibility</span></div>
+        </div>
+    </div>
+
+    <section class="project-detail-body">
+        <div class="container">
+            <a href="projects.html#simulation" class="back-link">← Back to Projects</a>
+            <div class="detail-grid">
+                <div class="detail-main">
+
+                    <section>
+                        <h2>Overview</h2>
+                        <p>This project builds an accessibility-focused human-robot interface enabling non-verbal users to control a simulated robot using hand gestures. The system is designed to be configurable — operators can define custom gesture-to-command mappings without modifying code.</p>
+                    </section>
+
+                    <section>
+                        <h2>Approach</h2>
+                        <p><strong>Gesture Detection:</strong> MediaPipe Hands provides real-time 21-keypoint hand landmark detection from a standard webcam. Gesture classifiers trained on these landmarks map hand configurations to robot commands with robust performance across lighting variations.</p><p><strong>ROS2 Integration:</strong> Recognized gestures are published as ROS2 topics, consumed by a gesture-to-velocity mapping node that translates discrete gesture classes into continuous robot velocity commands for the Gazebo simulation.</p><p><strong>Configurable Interface:</strong> A YAML-based gesture configuration system allows operators to define custom gesture-command mappings and threshold sensitivities without editing source code. Automated setup scripts reduced per-robot-variant configuration from ~3 hours to ~1 hour.</p>
+                    </section>
+
+                    <section>
+                        <h2>Results</h2>
+                        <div class="results-grid"><div class="result-box"><span class="result-val">&gt;90%</span><span class="result-label">Gesture accuracy</span></div><div class="result-box"><span class="result-val">~40%</span><span class="result-label">Faster adaptation</span></div><div class="result-box"><span class="result-val">~1hr</span><span class="result-label">Setup vs 3hrs</span></div></div>
+                        <p>The system achieved over 90% gesture detection accuracy in simulation trials. The configurable mapping interface reduced adaptation time for new gestures by approximately 40%. Automated setup scripts cut per-robot-variant configuration from roughly 3 hours to 1 hour.</p>
+                    </section>
+
+                    <section>
+                        <h2>Media</h2>
+                        <div class="media-placeholder">
+                            <span class="media-icon">🎥</span>
+                            Demo video and project images coming soon.
+                        </div>
+                    </section>
+
+                </div>
+
+                <aside class="detail-sidebar">
+                    <div class="sidebar-card">
+                        <h4>Key Stats</h4>
+                        <div class="sidebar-stat"><strong>&gt;90%</strong><span>Detection accuracy</span></div><div class="sidebar-stat"><strong>~40%</strong><span>Adaptation speedup</span></div>
+                    </div>
+                    <div class="sidebar-card">
+                        <h4>Domain</h4>
+                        <p>HRI • Accessibility • Simulation</p>
+                    </div>
+                    <div class="sidebar-card">
+                        <h4>Affiliation</h4>
+                        <p>WPI</p>
+                    </div>
+                    <div class="sidebar-card">
+                        <h4>Status</h4>
+                        <p>🔵 Completed</p>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Divam Trivedi. Building intelligent robots that see, think, and act.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

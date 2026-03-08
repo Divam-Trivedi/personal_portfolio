@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homography & Panoramic Stitching | Divam Trivedi</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="projects.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo-space"></div>
+            <ul id="nav-links">
+                <li><a href="../index.html#home">Home</a></li>
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#skills-logos">Skills</a></li>
+                <li><a href="../index.html#experience">Experience</a></li>
+                <li><a href="../projects.html" class="active">Projects</a></li>
+                <li><a href="../index.html#education">Education</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+                <li class="dropdown">
+                    <a href="#">Others ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../creativity.html">Creativity</a></li>
+                        <li><a href="../certificates.html">Certifications</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <div class="project-detail-hero">
+        <div class="container">
+            <div class="project-breadcrumb">
+                <a href="projects.html">Projects</a> &nbsp;/&nbsp; <a href="projects.html#simulation">Simulation</a> &nbsp;/&nbsp; Homography & Panoramic Stitching
+            </div>
+            <div class="hero-meta">
+                <span class="proj-domain sim">Simulation</span>
+                <span class="proj-year">Jan – Feb 2025</span>
+            </div>
+            <h1>Homography Estimation & Panoramic Image Stitching</h1>
+            <p class="hero-desc">Classical ANMS+RANSAC pipeline alongside a deep HomographyNet — packaged into a unified library for high-quality panorama stitching achieving ~1.5px RMSE.</p>
+            <div class="tech-tags"><span class="tech-tag">OpenCV</span><span class="tech-tag">HomographyNet</span><span class="tech-tag">PyTorch</span><span class="tech-tag">RANSAC</span><span class="tech-tag">ANMS</span><span class="tech-tag">Scikit-Learn</span><span class="tech-tag">Python</span></div>
+        </div>
+    </div>
+
+    <section class="project-detail-body">
+        <div class="container">
+            <a href="projects.html#simulation" class="back-link">← Back to Projects</a>
+            <div class="detail-grid">
+                <div class="detail-main">
+
+                    <section>
+                        <h2>Overview</h2>
+                        <p>This project implements and benchmarks two approaches to homography estimation for panoramic image stitching: a classical feature-based pipeline and a deep learning approach (HomographyNet). Both are packaged into a single library for flexible deployment.</p>
+                    </section>
+
+                    <section>
+                        <h2>Approach</h2>
+                        <p><strong>Classical Pipeline:</strong> ANMS (Adaptive Non-Maximal Suppression) keypoint detection is followed by descriptor computation, ratio-test matching, and RANSAC-based homography estimation. Multi-image stitching uses sequential homography composition with blending.</p><p><strong>HomographyNet:</strong> A CNN trained on MSCOCO-derived patch pairs learns to predict the homography directly from pixel intensity differences. The network is trained with an L2 loss on the four-point parameterization and augmented with synthetic perspective distortions.</p><p><strong>Unified Library:</strong> Both approaches are wrapped in a common API that accepts image pairs or sequences and returns stitched panoramas, enabling easy comparison and deployment.</p>
+                    </section>
+
+                    <section>
+                        <h2>Results</h2>
+                        <div class="results-grid"><div class="result-box"><span class="result-val">~1.5px</span><span class="result-label">Classical RMSE</span></div><div class="result-box"><span class="result-val">~2px</span><span class="result-label">Deep homography error</span></div><div class="result-box"><span class="result-val">Unified</span><span class="result-label">Stitching library</span></div></div>
+                        <p>The classical ANMS+RANSAC pipeline achieved ~1.5px RMSE on standard test pairs. HomographyNet achieved ~2px error on real-world scene pairs, with more graceful failure modes in textureless regions where classical feature matching struggles.</p>
+                    </section>
+
+                    <section>
+                        <h2>Media</h2>
+                        <div class="media-placeholder">
+                            <span class="media-icon">🎥</span>
+                            Demo video and project images coming soon.
+                        </div>
+                    </section>
+
+                </div>
+
+                <aside class="detail-sidebar">
+                    <div class="sidebar-card">
+                        <h4>Key Stats</h4>
+                        <div class="sidebar-stat"><strong>~1.5px</strong><span>Classical RMSE</span></div><div class="sidebar-stat"><strong>~2px</strong><span>Deep homography</span></div>
+                    </div>
+                    <div class="sidebar-card">
+                        <h4>Domain</h4>
+                        <p>Computer Vision • Image Processing</p>
+                    </div>
+                    <div class="sidebar-card">
+                        <h4>Affiliation</h4>
+                        <p>WPI</p>
+                    </div>
+                    <div class="sidebar-card">
+                        <h4>Status</h4>
+                        <p>🔵 Completed</p>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Divam Trivedi. Building intelligent robots that see, think, and act.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

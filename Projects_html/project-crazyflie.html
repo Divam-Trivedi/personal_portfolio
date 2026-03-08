@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrazyFlie 2.0 Quadrotor Control | Divam Trivedi</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="projects.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo-space"></div>
+            <ul id="nav-links">
+                <li><a href="../index.html#home">Home</a></li>
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#skills-logos">Skills</a></li>
+                <li><a href="../index.html#experience">Experience</a></li>
+                <li><a href="../projects.html" class="active">Projects</a></li>
+                <li><a href="../index.html#education">Education</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+                <li class="dropdown">
+                    <a href="#">Others ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../creativity.html">Creativity</a></li>
+                        <li><a href="../certificates.html">Certifications</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <div class="project-detail-hero">
+        <div class="container">
+            <div class="project-breadcrumb">
+                <a href="projects.html">Projects</a> &nbsp;/&nbsp; <a href="projects.html#hardware">Hardware</a> &nbsp;/&nbsp; CrazyFlie 2.0 Quadrotor Control
+            </div>
+            <div class="hero-meta">
+                <span class="proj-domain hw">Hardware</span>
+                <span class="proj-year">Dec 2024 – Feb 2025</span>
+            </div>
+            <h1>Quadrotor Control System for CrazyFlie 2.0</h1>
+            <p class="hero-desc">Cascaded PD and infinite-horizon LQR controllers with polynomial trajectory generation, achieving stable sim-to-real transfer on a physical CrazyFlie 2.0 drone.</p>
+            <div class="tech-tags"><span class="tech-tag">Python</span><span class="tech-tag">MATLAB</span><span class="tech-tag">LQR</span><span class="tech-tag">PD Control</span><span class="tech-tag">Trajectory Generation</span><span class="tech-tag">Simulation</span></div>
+        </div>
+    </div>
+
+    <section class="project-detail-body">
+        <div class="container">
+            <a href="projects.html#hardware" class="back-link">← Back to Projects</a>
+            <div class="detail-grid">
+                <div class="detail-main">
+
+                    <section>
+                        <h2>Overview</h2>
+                        <p>This project implements a full control stack — from simulation to physical flight — for the CrazyFlie 2.0 nano-quadrotor. The objective was to design controllers capable of stable hover and accurate trajectory tracking, then validate the sim-to-real transfer on the physical platform.</p>
+                    </section>
+
+                    <section>
+                        <h2>Approach</h2>
+                        <p><strong>Controller Design:</strong> A cascaded architecture was used with an outer position loop and inner attitude loop. Two controllers were designed and compared: a classical PD controller tuned through gain sweep, and an infinite-horizon LQR controller derived from the linearized quadrotor dynamics.</p><p><strong>Trajectory Generation:</strong> A polynomial-based trajectory planner generates smooth position, velocity, and acceleration profiles between waypoints. The planner enforces continuity constraints at segment boundaries to avoid actuator saturation.</p><p><strong>Sim-to-Real Transfer:</strong> Controllers were first validated in simulation with the full nonlinear model. The same parameter set was then deployed to the physical CrazyFlie 2.0 with only minor gain adjustments to account for unmodeled rotor dynamics.</p>
+                    </section>
+
+                    <section>
+                        <h2>Results</h2>
+                        <div class="results-grid"><div class="result-box"><span class="result-val">&lt;3mm</span><span class="result-label">Sim trajectory error</span></div><div class="result-box"><span class="result-val">&lt;7mm</span><span class="result-label">Real-world RMSE</span></div><div class="result-box"><span class="result-val">✓</span><span class="result-label">Sim-to-real transfer</span></div></div>
+                        <p>The LQR controller achieved under 3mm trajectory tracking error in simulation. On the physical platform, the system maintained under 7mm RMSE during aggressive trajectory tracking tests, demonstrating successful sim-to-real transfer with minimal re-tuning.</p>
+                    </section>
+
+                    <section>
+                        <h2>Media</h2>
+                        <div class="media-placeholder">
+                            <span class="media-icon">🎥</span>
+                            Demo video and project images coming soon.
+                        </div>
+                    </section>
+
+                </div>
+
+                <aside class="detail-sidebar">
+                    <div class="sidebar-card">
+                        <h4>Key Stats</h4>
+                        <div class="sidebar-stat"><strong>&lt;3mm</strong><span>Sim trajectory error</span></div><div class="sidebar-stat"><strong>&lt;7mm</strong><span>Real-world RMSE</span></div>
+                    </div>
+                    <div class="sidebar-card">
+                        <h4>Domain</h4>
+                        <p>Control Systems • Aerial Robotics</p>
+                    </div>
+                    <div class="sidebar-card">
+                        <h4>Affiliation</h4>
+                        <p>WPI</p>
+                    </div>
+                    <div class="sidebar-card">
+                        <h4>Status</h4>
+                        <p>🔵 Completed</p>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Divam Trivedi. Building intelligent robots that see, think, and act.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hybrid Boundary Detection | Divam Trivedi</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="projects.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo-space"></div>
+            <ul id="nav-links">
+                <li><a href="../index.html#home">Home</a></li>
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#skills-logos">Skills</a></li>
+                <li><a href="../index.html#experience">Experience</a></li>
+                <li><a href="../projects.html" class="active">Projects</a></li>
+                <li><a href="../index.html#education">Education</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+                <li class="dropdown">
+                    <a href="#">Others ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../creativity.html">Creativity</a></li>
+                        <li><a href="../certificates.html">Certifications</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <div class="project-detail-hero">
+        <div class="container">
+            <div class="project-breadcrumb">
+                <a href="projects.html">Projects</a> &nbsp;/&nbsp; <a href="projects.html#simulation">Simulation</a> &nbsp;/&nbsp; Hybrid Boundary Detection
+            </div>
+            <div class="hero-meta">
+                <span class="proj-domain sim">Simulation</span>
+                <span class="proj-year">Feb – Mar 2025</span>
+            </div>
+            <h1>Hybrid Boundary Detection & Deep Classification</h1>
+            <p class="hero-desc">A two-phase pipeline fusing classical filters with CNN backbones. DenseNet achieved 92.5% CIFAR-10 accuracy using 30% fewer parameters than the baseline.</p>
+            <div class="tech-tags"><span class="tech-tag">OpenCV</span><span class="tech-tag">DenseNet</span><span class="tech-tag">ResNet</span><span class="tech-tag">PyTorch</span><span class="tech-tag">CIFAR-10</span><span class="tech-tag">PbLite</span><span class="tech-tag">Python</span></div>
+        </div>
+    </div>
+
+    <section class="project-detail-body">
+        <div class="container">
+            <a href="projects.html#simulation" class="back-link">← Back to Projects</a>
+            <div class="detail-grid">
+                <div class="detail-main">
+
+                    <section>
+                        <h2>Overview</h2>
+                        <p>This project investigates how classical computer vision cues can complement and improve deep learning classifiers. A two-phase pipeline was built: Phase 1 uses classical filter banks to produce robust boundary probability maps, and Phase 2 benchmarks CNN architectures using those maps as additional input features.</p>
+                    </section>
+
+                    <section>
+                        <h2>Approach</h2>
+                        <p><strong>Phase 1 – PbLite Boundary Maps:</strong> A filter bank combining Difference-of-Gaussian, Leung-Malik, Gabor, half-disk, Canny, and Sobel filters is applied to compute oriented edge responses. These are combined into a Probability-of-Boundary (PbLite) map, providing rich structural priors.</p><p><strong>Phase 2 – CNN Benchmarking:</strong> ResNet variants, DenseNet, and a custom lightweight CNN are trained and benchmarked on CIFAR-10 — both with and without PbLite boundary maps as additional input channels.</p><p><strong>Parameter Efficiency:</strong> DenseNet's dense connectivity reuses feature maps aggressively, allowing it to achieve top accuracy at significantly lower parameter counts than ResNet baselines.</p>
+                    </section>
+
+                    <section>
+                        <h2>Results</h2>
+                        <div class="results-grid"><div class="result-box"><span class="result-val">92.5%</span><span class="result-label">CIFAR-10 accuracy</span></div><div class="result-box"><span class="result-val">~30%</span><span class="result-label">Fewer parameters</span></div><div class="result-box"><span class="result-val">PbLite</span><span class="result-label">Boundary maps</span></div></div>
+                        <p>DenseNet achieved 92.5% accuracy on CIFAR-10 using approximately 30% fewer parameters than the ResNet baseline. Integration of PbLite boundary maps improved edge-case classification accuracy, demonstrating the complementary value of classical and learned features.</p>
+                    </section>
+
+                    <section>
+                        <h2>Media</h2>
+                        <div class="media-placeholder">
+                            <span class="media-icon">🎥</span>
+                            Demo video and project images coming soon.
+                        </div>
+                    </section>
+
+                </div>
+
+                <aside class="detail-sidebar">
+                    <div class="sidebar-card">
+                        <h4>Key Stats</h4>
+                        <div class="sidebar-stat"><strong>92.5%</strong><span>CIFAR-10 accuracy</span></div><div class="sidebar-stat"><strong>~30%</strong><span>Fewer parameters</span></div>
+                    </div>
+                    <div class="sidebar-card">
+                        <h4>Domain</h4>
+                        <p>Computer Vision • Deep Learning • Classification</p>
+                    </div>
+                    <div class="sidebar-card">
+                        <h4>Affiliation</h4>
+                        <p>WPI</p>
+                    </div>
+                    <div class="sidebar-card">
+                        <h4>Status</h4>
+                        <p>🔵 Completed</p>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Divam Trivedi. Building intelligent robots that see, think, and act.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

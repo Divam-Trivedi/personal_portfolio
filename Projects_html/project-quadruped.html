@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quadruped Gait Planning | Divam Trivedi</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="projects.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo-space"></div>
+            <ul id="nav-links">
+                <li><a href="../index.html#home">Home</a></li>
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#skills-logos">Skills</a></li>
+                <li><a href="../index.html#experience">Experience</a></li>
+                <li><a href="../projects.html" class="active">Projects</a></li>
+                <li><a href="../index.html#education">Education</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+                <li class="dropdown">
+                    <a href="#">Others ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../creativity.html">Creativity</a></li>
+                        <li><a href="../certificates.html">Certifications</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <div class="project-detail-hero">
+        <div class="container">
+            <div class="project-breadcrumb">
+                <a href="projects.html">Projects</a> &nbsp;/&nbsp; <a href="projects.html#hardware">Hardware</a> &nbsp;/&nbsp; Quadruped Gait Planning
+            </div>
+            <div class="hero-meta">
+                <span class="proj-domain hw">Hardware</span>
+                <span class="proj-year">Jun – Oct 2023</span>
+            </div>
+            <h1>Gait Planning & Control for a Quadruped Robot</h1>
+            <p class="hero-desc">Inverse kinematics and adaptive gait controllers deployed on Raspberry Pi, enabling a quadruped to maintain balance and traverse uneven terrain under dynamic perturbations.</p>
+            <div class="tech-tags"><span class="tech-tag">Python</span><span class="tech-tag">Raspberry Pi</span><span class="tech-tag">ROS2</span><span class="tech-tag">PyBullet</span><span class="tech-tag">Inverse Kinematics</span><span class="tech-tag">Gait Planning</span></div>
+        </div>
+    </div>
+
+    <section class="project-detail-body">
+        <div class="container">
+            <a href="projects.html#hardware" class="back-link">← Back to Projects</a>
+            <div class="detail-grid">
+                <div class="detail-main">
+
+                    <section>
+                        <h2>Overview</h2>
+                        <p>This project designs and deploys full-body gait planning and control for a custom quadruped robot. The focus was on enabling stable locomotion on uneven terrain and robustness to external perturbations — key challenges for field-deployable legged robots.</p>
+                    </section>
+
+                    <section>
+                        <h2>Approach</h2>
+                        <p><strong>Inverse Kinematics:</strong> Per-leg IK solvers compute joint angles from desired foot-placement trajectories. The solvers handle the full 3-DOF leg kinematic chains and are efficient enough for real-time execution on Raspberry Pi.</p><p><strong>Adaptive Gait Controller:</strong> A trot gait baseline was implemented with adaptive phase adjustments based on terrain height estimates from foot-contact sensing. When the controller detects loss of contact or unexpected ground contact, it redistributes body weight and adjusts step height.</p><p><strong>Simulation & Validation:</strong> All gaits were first developed and tuned in PyBullet simulation with procedurally generated terrain before deployment to the physical platform.</p>
+                    </section>
+
+                    <section>
+                        <h2>Results</h2>
+                        <div class="results-grid"><div class="result-box"><span class="result-val">~30%</span><span class="result-label">Better terrain stability</span></div><div class="result-box"><span class="result-val">5%</span><span class="result-label">Step positional error</span></div><div class="result-box"><span class="result-val">Dynamic</span><span class="result-label">Balance under perturbations</span></div></div>
+                        <p>The adaptive gait controller improved stability on uneven terrain by approximately 30% compared to a fixed-gait baseline. The robot maintained balance under lateral pushes and recovered within 2 steps in perturbation tests.</p>
+                    </section>
+
+                    <section>
+                        <h2>Media</h2>
+                        <div class="media-placeholder">
+                            <span class="media-icon">🎥</span>
+                            Demo video and project images coming soon.
+                        </div>
+                    </section>
+
+                </div>
+
+                <aside class="detail-sidebar">
+                    <div class="sidebar-card">
+                        <h4>Key Stats</h4>
+                        <div class="sidebar-stat"><strong>~30%</strong><span>Terrain stability</span></div><div class="sidebar-stat"><strong>5%</strong><span>Positional error</span></div>
+                    </div>
+                    <div class="sidebar-card">
+                        <h4>Domain</h4>
+                        <p>Legged Robots • Gait Planning • Control</p>
+                    </div>
+                    <div class="sidebar-card">
+                        <h4>Affiliation</h4>
+                        <p>RV College of Engineering / Personal</p>
+                    </div>
+                    <div class="sidebar-card">
+                        <h4>Status</h4>
+                        <p>🔵 Completed</p>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Divam Trivedi. Building intelligent robots that see, think, and act.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

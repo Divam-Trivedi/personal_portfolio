@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual-Inertial Odometry | Divam Trivedi</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="projects.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo-space"></div>
+            <ul id="nav-links">
+                <li><a href="../index.html#home">Home</a></li>
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#skills-logos">Skills</a></li>
+                <li><a href="../index.html#experience">Experience</a></li>
+                <li><a href="../projects.html" class="active">Projects</a></li>
+                <li><a href="../index.html#education">Education</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+                <li class="dropdown">
+                    <a href="#">Others ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../creativity.html">Creativity</a></li>
+                        <li><a href="../certificates.html">Certifications</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <div class="project-detail-hero">
+        <div class="container">
+            <div class="project-breadcrumb">
+                <a href="projects.html">Projects</a> &nbsp;/&nbsp; <a href="projects.html#simulation">Simulation</a> &nbsp;/&nbsp; Visual-Inertial Odometry
+            </div>
+            <div class="hero-meta">
+                <span class="proj-domain sim">Simulation</span>
+                <span class="proj-year">Dec 2024 – Jan 2025</span>
+            </div>
+            <h1>Visual-Inertial Odometry & Synthetic Dataset Generation</h1>
+            <p class="hero-desc">A 10,000+ frame synthetic Vision+IMU dataset built in Blender, paired with MSCKF and deep fusion implementations achieving under 5% trajectory recovery error.</p>
+            <div class="tech-tags"><span class="tech-tag">MSCKF</span><span class="tech-tag">Blender</span><span class="tech-tag">PyTorch</span><span class="tech-tag">OysterSim</span><span class="tech-tag">IMU Fusion</span><span class="tech-tag">SLAM</span><span class="tech-tag">Python</span></div>
+        </div>
+    </div>
+
+    <section class="project-detail-body">
+        <div class="container">
+            <a href="projects.html#simulation" class="back-link">← Back to Projects</a>
+            <div class="detail-grid">
+                <div class="detail-main">
+
+                    <section>
+                        <h2>Overview</h2>
+                        <p>This project addresses a fundamental bottleneck in VIO research: the scarcity of labeled, synchronized Vision+IMU datasets with known ground truth. A synthetic dataset pipeline was built in Blender, and both classical (MSCKF) and learning-based fusion methods were implemented and benchmarked against it.</p>
+                    </section>
+
+                    <section>
+                        <h2>Approach</h2>
+                        <p><strong>Synthetic Dataset Generation:</strong> Using Blender's scripting API and OysterSim, a pipeline was created to render photorealistic camera sequences with synchronized IMU trajectories. Over 10,000 frames were generated across diverse lighting conditions, motion profiles, and scene types.</p><p><strong>MSCKF Implementation:</strong> The Multi-State Constraint Kalman Filter was implemented as the classical VIO baseline. Feature tracks from optical flow are used to impose geometric constraints, bounding trajectory drift without loop closure.</p><p><strong>Deep Fusion Network:</strong> A learning-based approach fuses CNN-extracted visual features with IMU integration windows through a recurrent architecture, learning to weight the two modalities based on motion and lighting conditions.</p>
+                    </section>
+
+                    <section>
+                        <h2>Results</h2>
+                        <div class="results-grid"><div class="result-box"><span class="result-val">10,000+</span><span class="result-label">Synthetic frames</span></div><div class="result-box"><span class="result-val">&lt;5%</span><span class="result-label">Trajectory error</span></div><div class="result-box"><span class="result-val">+20%</span><span class="result-label">Over vision-only</span></div></div>
+                        <p>Both classical MSCKF and the deep fusion network achieved under 5% trajectory recovery error on synthetic benchmarks. The fusion approach improved pose reliability by approximately 20% over vision-only baselines, particularly in high-dynamic-range and textureless scenes where visual features degrade.</p>
+                    </section>
+
+                    <section>
+                        <h2>Media</h2>
+                        <div class="media-placeholder">
+                            <span class="media-icon">🎥</span>
+                            Demo video and project images coming soon.
+                        </div>
+                    </section>
+
+                </div>
+
+                <aside class="detail-sidebar">
+                    <div class="sidebar-card">
+                        <h4>Key Stats</h4>
+                        <div class="sidebar-stat"><strong>&lt;5%</strong><span>Trajectory error</span></div><div class="sidebar-stat"><strong>+20%</strong><span>Over vision-only</span></div>
+                    </div>
+                    <div class="sidebar-card">
+                        <h4>Domain</h4>
+                        <p>State Estimation • SLAM • Sensor Fusion</p>
+                    </div>
+                    <div class="sidebar-card">
+                        <h4>Affiliation</h4>
+                        <p>WPI</p>
+                    </div>
+                    <div class="sidebar-card">
+                        <h4>Status</h4>
+                        <p>🔵 Completed</p>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Divam Trivedi. Building intelligent robots that see, think, and act.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

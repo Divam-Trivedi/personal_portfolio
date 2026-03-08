@@ -6,6 +6,14 @@
     <title>Divam Trivedi | Robotics Engineer</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SSMPVZ1XWN"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SSMPVZ1XWN');
+    </script>
 </head>
 <body>
     <!-- Navigation -->
@@ -18,9 +26,18 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills-logos">Skills</a></li>
                 <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
+                <li><a href="Projects_html/projects.html">Projects</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <!-- <li><a href="creativity.html">Creativity</a></li> -->
+                <li class="dropdown">
+                    <a href="#">Others ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="creativity.html">Creativity</a></li>
+                        <li><a href="certificates.html">Certifications</a></li>
+                        <!-- Add more items here as needed -->
+                    </ul>
+                </li>
             </ul>
 
             <!-- Animated Hamburger -->
@@ -476,22 +493,22 @@
             <!-- White logo container -->
             <div class="collaboration-logos" style="background: #86aeea; padding: 1rem; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 2rem; border-radius: 10px; margin-top: 1.5rem;">
                 <div class="logo-item">
-                    <img src="Images/rvce_logo.png" alt="R V College of Engineering" style="height: 60px; object-fit: contain;">
+                    <img src="Images/rvce_logo.png" alt="R V College of Engineering" style="height:45px; object-fit: contain;">
                 </div>
                 <div class="logo-item">
-                    <img src="Images/nokia_logo.png" alt="Nokia Corporation" style="height: 60px; object-fit: contain;">
+                    <img src="Images/nokia_logo.png" alt="Nokia Corporation" style="height: 45px; object-fit: contain;">
                 </div>
                 <div class="logo-item">
-                    <img src="Images/HPE_logo2.png" alt="Hewlett Packard Enterprise" style="height: 60px; object-fit: contain;">
+                    <img src="Images/HPE_logo2.png" alt="Hewlett Packard Enterprise" style="height: 45px; object-fit: contain;">
                 </div>
                 <div class="logo-item">
-                    <img src="Images/DRDO_logo.png" alt="Defence Research and Development Organisation" style="height: 60px; object-fit: contain;">
+                    <img src="Images/DRDO_logo.png" alt="Defence Research and Development Organisation" style="height: 45px; object-fit: contain;">
                 </div>
                 <div class="logo-item">
-                    <img src="Images/IISc_logo.png" alt="Indian Institute of Science" style="height: 60px; object-fit: contain;">
+                    <img src="Images/IISc_logo.png" alt="Indian Institute of Science" style="height: 45px; object-fit: contain;">
                 </div>
                 <div class="logo-item">
-                    <img src="Images/WPI_logo.png" alt="Worcester Polytechnic Institute" style="height: 60px; object-fit: contain;">
+                    <img src="Images/WPI_logo.png" alt="Worcester Polytechnic Institute" style="height: 45px; object-fit: contain;">
                 </div>
                     
             </div>
@@ -510,27 +527,50 @@
                 I'm always open to discussing robotics, research opportunities, or collaborations.
             </p>
 
-            <div class="contact-info">
+            <div class="contact-content-wrapper">
+                <div class="contact-info">
 
-                <!-- Email -->
-                <div class="contact-item">
-                    <img src="Images/mail-pencil-svgrepo-com.svg" alt="Email Icon" class="contact-icon">
-                    <a href="mailto:divam.trivedi@gmail.com">divam.trivedi@gmail.com</a>
+                    <!-- Email -->
+                    <div class="contact-item">
+                        <img src="Images/mail-pencil-svgrepo-com.svg" alt="Email Icon" class="contact-icon">
+                        <a href="mailto:divam.trivedi@gmail.com">divam.trivedi@gmail.com</a>
+                    </div>
+
+                    <!-- LinkedIn -->
+                    <div class="contact-item">
+                        <img src="Images/linkedin-svgrepo-com.svg" alt="LinkedIn Icon" class="contact-icon">
+                        <a href="https://www.linkedin.com/in/divam-trivedi-62615516b/" target="_blank">LinkedIn</a>
+                    </div>
+
+                    <!-- GitHub -->
+                    <div class="contact-item">
+                        <img src="Images/github-142-svgrepo-com.svg" alt="GitHub Icon" class="contact-icon">
+                        <a href="https://github.com/Divam-Trivedi" target="_blank">GitHub</a>
+                    </div>
+
                 </div>
 
-                <!-- LinkedIn -->
-                <div class="contact-item">
-                    <img src="Images/linkedin-svgrepo-com.svg" alt="LinkedIn Icon" class="contact-icon">
-                    <a href="https://www.linkedin.com/in/divam-trivedi-62615516b/" target="_blank">LinkedIn</a>
-                </div>
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <form action="https://formspree.io/f/mrbnywrd" method="POST">
+                        
+                        <input 
+                            type="text" 
+                            name="email" 
+                            placeholder="Your email or phone number" 
+                            required
+                        >
 
-                <!-- GitHub -->
-                <div class="contact-item">
-                    <img src="Images/github-142-svgrepo-com.svg" alt="GitHub Icon" class="contact-icon">
-                    <a href="https://github.com/Divam-Trivedi" target="_blank">GitHub</a>
-                </div>
+                        <textarea 
+                            name="message" 
+                            placeholder="Your message..." 
+                            rows="2" 
+                            required
+                        ></textarea>
 
-            </div>
+                        <button type="submit" class="contact-submit">Send Message</button>
+                    </form>
+                </div>
         </div>
     </section>
 

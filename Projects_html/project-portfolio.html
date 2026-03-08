@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website | Divam Trivedi</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="projects.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo-space"></div>
+            <ul id="nav-links">
+                <li><a href="../index.html#home">Home</a></li>
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#skills-logos">Skills</a></li>
+                <li><a href="../index.html#experience">Experience</a></li>
+                <li><a href="../projects.html" class="active">Projects</a></li>
+                <li><a href="../index.html#education">Education</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+                <li class="dropdown">
+                    <a href="#">Others ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../creativity.html">Creativity</a></li>
+                        <li><a href="../certificates.html">Certifications</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <div class="project-detail-hero">
+        <div class="container">
+            <div class="project-breadcrumb">
+                <a href="projects.html">Projects</a> &nbsp;/&nbsp; <a href="projects.html#software">Software</a> &nbsp;/&nbsp; Personal Portfolio Website
+            </div>
+            <div class="hero-meta">
+                <span class="proj-domain sw">Software</span>
+                <span class="proj-year">2025 – Present</span>
+            </div>
+            <h1>Personal Portfolio Website — divamtrivedi.com</h1>
+            <p class="hero-desc">A fully custom, deployed robotics portfolio built from scratch — no frameworks, just HTML, CSS, and JavaScript — with animated carousels, a contact form, and Google Analytics.</p>
+            <div class="tech-tags"><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span><span class="tech-tag">Responsive Design</span><span class="tech-tag">Google Analytics</span><span class="tech-tag">Formspree</span><span class="tech-tag">Deployed</span></div>
+        </div>
+    </div>
+
+    <section class="project-detail-body">
+        <div class="container">
+            <a href="projects.html#software" class="back-link">← Back to Projects</a>
+            <div class="detail-grid">
+                <div class="detail-main">
+
+                    <section>
+                        <h2>Overview</h2>
+                        <p>This is the site you're on right now. It was built from scratch to serve as a professional showcase for robotics and engineering work, without relying on any frontend frameworks or CMS platforms. Every section, animation, and interaction is hand-coded.</p>
+                    </section>
+
+                    <section>
+                        <h2>Approach</h2>
+                        <p><strong>Design System:</strong> A cohesive dark theme was designed using CSS custom properties for consistent color tokens across the entire site. The palette was chosen for readability and contrast while reflecting a technical, engineering aesthetic.</p><p><strong>Animations:</strong> CSS keyframe animations and the Intersection Observer API are used for scroll-triggered fade-ins, a typing name effect on the hero, and smooth section transitions — all without JavaScript animation libraries.</p><p><strong>Infinite Skill Carousel:</strong> The skills logo section uses pure CSS animations for three rows of logos scrolling in alternating directions, with mask gradients for seamless edge fades.</p><p><strong>Contact Form:</strong> Formspree handles form submissions without requiring a backend, keeping the site fully static and cheaply deployable.</p><p><strong>Deployment:</strong> The site is deployed and live at divamtrivedi.com with Google Analytics for traffic monitoring.</p>
+                    </section>
+
+                    <section>
+                        <h2>Results</h2>
+                        <div class="results-grid"><div class="result-box"><span class="result-val">Live</span><span class="result-label">divamtrivedi.com</span></div><div class="result-box"><span class="result-val">0</span><span class="result-label">Frameworks used</span></div><div class="result-box"><span class="result-val">Mobile</span><span class="result-label">Fully responsive</span></div></div>
+                        <p>The site is live and serving as an active professional portfolio. All features work across desktop and mobile viewports. Built and iterated on continuously as new projects and experiences are added.</p>
+                    </section>
+
+                    <section>
+                        <h2>Media</h2>
+                        <div class="media-placeholder">
+                            <span class="media-icon">🎥</span>
+                            Demo video and project images coming soon.
+                        </div>
+                    </section>
+
+                </div>
+
+                <aside class="detail-sidebar">
+                    <div class="sidebar-card">
+                        <h4>Key Stats</h4>
+                        <div class="sidebar-stat"><strong>Live</strong><span>divamtrivedi.com</span></div><div class="sidebar-stat"><strong>Pure</strong><span>HTML/CSS/JS</span></div>
+                    </div>
+                    <div class="sidebar-card">
+                        <h4>Domain</h4>
+                        <p>Web Development • Frontend • Design</p>
+                    </div>
+                    <div class="sidebar-card">
+                        <h4>Affiliation</h4>
+                        <p>Personal Project</p>
+                    </div>
+                    <div class="sidebar-card">
+                        <h4>Status</h4>
+                        <p>🟢 Live & Active</p>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Divam Trivedi. Building intelligent robots that see, think, and act.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenManipulator X Control | Divam Trivedi</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="projects.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo-space"></div>
+            <ul id="nav-links">
+                <li><a href="../index.html#home">Home</a></li>
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#skills-logos">Skills</a></li>
+                <li><a href="../index.html#experience">Experience</a></li>
+                <li><a href="../projects.html" class="active">Projects</a></li>
+                <li><a href="../index.html#education">Education</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+                <li class="dropdown">
+                    <a href="#">Others ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../creativity.html">Creativity</a></li>
+                        <li><a href="../certificates.html">Certifications</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <div class="project-detail-hero">
+        <div class="container">
+            <div class="project-breadcrumb">
+                <a href="projects.html">Projects</a> &nbsp;/&nbsp; <a href="projects.html#hardware">Hardware</a> &nbsp;/&nbsp; OpenManipulator X Control
+            </div>
+            <div class="hero-meta">
+                <span class="proj-domain hw">Hardware</span>
+                <span class="proj-year">Oct – Dec 2024</span>
+            </div>
+            <h1>Dynamic Control of OpenManipulator X</h1>
+            <p class="hero-desc">LSPB trajectory planning and PD joint control for a 6-DOF manipulator, with torque estimation validated through motor current profiling.</p>
+            <div class="tech-tags"><span class="tech-tag">ROS2</span><span class="tech-tag">MATLAB</span><span class="tech-tag">PD Control</span><span class="tech-tag">LSPB</span><span class="tech-tag">Dynamics</span><span class="tech-tag">Torque Estimation</span></div>
+        </div>
+    </div>
+
+    <section class="project-detail-body">
+        <div class="container">
+            <a href="projects.html#hardware" class="back-link">← Back to Projects</a>
+            <div class="detail-grid">
+                <div class="detail-main">
+
+                    <section>
+                        <h2>Overview</h2>
+                        <p>This project implements full joint-space trajectory control and dynamics analysis for the OpenManipulator X, a 6-DOF serial manipulator arm. The work covers both trajectory planning and torque-level dynamics validation.</p>
+                    </section>
+
+                    <section>
+                        <h2>Approach</h2>
+                        <p><strong>LSPB Trajectory Planning:</strong> Linear Segment with Parabolic Blends (LSPB) profiles were used for smooth joint-space motion. The planner produces position, velocity, and acceleration profiles that respect joint limits while minimizing jerk at transition points.</p><p><strong>PD Joint Control:</strong> Independent PD controllers are implemented per joint. Gains were tuned using Ziegler–Nichols initial estimates followed by fine-tuning against step and trajectory responses.</p><p><strong>Torque Estimation & Wrench Analysis:</strong> The Euler–Lagrange dynamic model was used to compute expected joint torques along planned trajectories. These were compared against torque estimates derived from motor current profiles, validating the dynamic model.</p>
+                    </section>
+
+                    <section>
+                        <h2>Results</h2>
+                        <div class="results-grid"><div class="result-box"><span class="result-val">&lt;5%</span><span class="result-label">Path tracking error</span></div><div class="result-box"><span class="result-val">~5%</span><span class="result-label">Torque accuracy</span></div><div class="result-box"><span class="result-val">6-DOF</span><span class="result-label">Full arm control</span></div></div>
+                        <p>The LSPB+PD system achieved under 5% path tracking error across all tested trajectories. Torque estimates from the dynamic model matched motor-current-derived measurements within approximately 5%, validating the modeled dynamics.</p>
+                    </section>
+
+                    <section>
+                        <h2>Media</h2>
+                        <div class="media-placeholder">
+                            <span class="media-icon">🎥</span>
+                            Demo video and project images coming soon.
+                        </div>
+                    </section>
+
+                </div>
+
+                <aside class="detail-sidebar">
+                    <div class="sidebar-card">
+                        <h4>Key Stats</h4>
+                        <div class="sidebar-stat"><strong>&lt;5%</strong><span>Path tracking error</span></div><div class="sidebar-stat"><strong>~5%</strong><span>Torque accuracy</span></div>
+                    </div>
+                    <div class="sidebar-card">
+                        <h4>Domain</h4>
+                        <p>Manipulation • Robot Dynamics • Control</p>
+                    </div>
+                    <div class="sidebar-card">
+                        <h4>Affiliation</h4>
+                        <p>WPI</p>
+                    </div>
+                    <div class="sidebar-card">
+                        <h4>Status</h4>
+                        <p>🔵 Completed</p>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Divam Trivedi. Building intelligent robots that see, think, and act.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

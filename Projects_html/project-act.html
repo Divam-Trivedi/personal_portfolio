@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imitation Learning with ACT | Divam Trivedi</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="projects.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo-space"></div>
+            <ul id="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#skills-logos">Skills</a></li>
+                <li><a href="index.html#experience">Experience</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="index.html#education">Education</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li class="dropdown">
+                    <a href="#">Others ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="creativity.html">Creativity</a></li>
+                        <li><a href="certificates.html">Certifications</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <div class="project-detail-hero">
+        <div class="container">
+            <div class="project-breadcrumb">
+                <a href="projects.html">Projects</a> &nbsp;/&nbsp; <a href="projects.html#simulation">Simulation</a> &nbsp;/&nbsp; Imitation Learning with ACT
+            </div>
+            <div class="hero-meta">
+                <span class="proj-domain sim">Simulation</span>
+                <span class="proj-year">Mar – May 2025</span>
+            </div>
+            <h1>Imitation Learning for Peg Placement (ACT + Transformers)</h1>
+            <p class="hero-desc">Action Chunking Transformer with VAE latent encoding trained on expert demonstrations — outperforming behavior cloning baselines by 30% on constrained peg placement tasks.</p>
+            <div class="tech-tags"><span class="tech-tag">Transformers</span><span class="tech-tag">VAE</span><span class="tech-tag">PyTorch</span><span class="tech-tag">Action Chunking</span><span class="tech-tag">Imitation Learning</span><span class="tech-tag">Python</span></div>
+        </div>
+    </div>
+
+    <section class="project-detail-body">
+        <div class="container">
+            <a href="projects.html#simulation" class="back-link">← Back to Projects</a>
+            <div class="detail-grid">
+                <div class="detail-main">
+
+                    <section>
+                        <h2>Overview</h2>
+                        <p>This project implements Action Chunking Transformers (ACT) for learning peg placement manipulation from expert demonstrations. ACT represents actions as chunks predicted in latent space using a Variational Autoencoder, enabling smoother, more consistent policies than step-wise behavior cloning.</p>
+                    </section>
+
+                    <section>
+                        <h2>Approach</h2>
+                        <p><strong>Expert Demonstration Collection:</strong> Demonstrations were collected via scripted oracle policies in simulation, capturing diverse approach trajectories and insertion attempts for the peg-in-hole task.</p><p><strong>Action Chunking Transformer:</strong> The ACT architecture encodes sequences of actions into a latent space using a VAE. At inference time, the policy predicts chunks of future actions jointly, reducing compounding errors that plague step-by-step cloning.</p><p><strong>Training Improvements:</strong> Latent-space smoothing was applied to handle multi-modal demonstration distributions. A teacher-forcing curriculum gradually reduced ground-truth conditioning during training to improve closed-loop performance.</p>
+                    </section>
+
+                    <section>
+                        <h2>Results</h2>
+                        <div class="results-grid"><div class="result-box"><span class="result-val">+30%</span><span class="result-label">Over BC baseline</span></div><div class="result-box"><span class="result-val">VAE</span><span class="result-label">Latent action encoding</span></div><div class="result-box"><span class="result-val">Generalizes</span><span class="result-label">Unseen configs</span></div></div>
+                        <p>ACT outperformed the behavior cloning baseline by approximately 30% on constrained peg placement success rate. Transfer to unseen initial configurations was demonstrated through latent-space smoothing, showing that the learned representations generalized beyond the training distribution.</p>
+                    </section>
+
+                    <section>
+                        <h2>Media</h2>
+                        <div class="media-placeholder">
+                            <span class="media-icon">🎥</span>
+                            Demo video and project images coming soon.
+                        </div>
+                    </section>
+
+                </div>
+
+                <aside class="detail-sidebar">
+                    <div class="sidebar-card">
+                        <h4>Key Stats</h4>
+                        <div class="sidebar-stat"><strong>+30%</strong><span>Over BC baseline</span></div><div class="sidebar-stat"><strong>Generalizes</strong><span>Unseen configs</span></div>
+                    </div>
+                    <div class="sidebar-card">
+                        <h4>Domain</h4>
+                        <p>Imitation Learning • Transformers • Manipulation</p>
+                    </div>
+                    <div class="sidebar-card">
+                        <h4>Affiliation</h4>
+                        <p>WPI</p>
+                    </div>
+                    <div class="sidebar-card">
+                        <h4>Status</h4>
+                        <p>🔵 Completed</p>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Divam Trivedi. Building intelligent robots that see, think, and act.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

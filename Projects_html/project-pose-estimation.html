@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6-DoF Pose Estimation | Divam Trivedi</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="projects.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo-space"></div>
+            <ul id="nav-links">
+                <li><a href="../index.html#home">Home</a></li>
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#skills-logos">Skills</a></li>
+                <li><a href="../index.html#experience">Experience</a></li>
+                <li><a href="../projects.html" class="active">Projects</a></li>
+                <li><a href="../index.html#education">Education</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+                <li class="dropdown">
+                    <a href="#">Others ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../creativity.html">Creativity</a></li>
+                        <li><a href="../certificates.html">Certifications</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <div class="project-detail-hero">
+        <div class="container">
+            <div class="project-breadcrumb">
+                <a href="projects.html">Projects</a> &nbsp;/&nbsp; <a href="projects.html#hardware">Hardware</a> &nbsp;/&nbsp; 6-DoF Pose Estimation
+            </div>
+            <div class="hero-meta">
+                <span class="proj-domain hw">Hardware</span>
+                <span class="proj-year">Nov 2024 – Present</span>
+            </div>
+            <h1>6-DoF Pose Estimation for Medical Objects</h1>
+            <p class="hero-desc">A marker-less, vision-only 6-DoF pose estimator for bottles, syringes, and medical trays — eliminating physical markers and enabling repeatable setup in clinical environments.</p>
+            <div class="tech-tags"><span class="tech-tag">PyTorch</span><span class="tech-tag">TensorFlow</span><span class="tech-tag">RealSense D435</span><span class="tech-tag">ROS2</span><span class="tech-tag">Multi-view Fusion</span><span class="tech-tag">Python</span></div>
+        </div>
+    </div>
+
+    <section class="project-detail-body">
+        <div class="container">
+            <a href="projects.html#hardware" class="back-link">← Back to Projects</a>
+            <div class="detail-grid">
+                <div class="detail-main">
+
+                    <section>
+                        <h2>Overview</h2>
+                        <p>This project develops a marker-less 6-DoF pose estimation system for common medical objects — bottles, syringes, and IV trays — designed to run onboard the WPI nursing assistance robot. By eliminating the need for physical fiducial markers, the system makes deployment in real clinical spaces significantly more practical.</p><p>The estimator relies on a multi-view fusion pipeline fed by Intel RealSense D435 depth cameras, outputting 6-DoF pose (position + orientation) for each detected object in the robot's workspace.</p>
+                    </section>
+
+                    <section>
+                        <h2>Approach</h2>
+                        <p><strong>Vision-Only Pipeline:</strong> The system processes synchronized RGB-D frames from multiple calibrated cameras. Feature extraction and depth back-projection are used to initialize pose hypotheses, which are then refined through iterative alignment.</p><p><strong>Multi-View Fusion:</strong> Estimates from individual viewpoints are fused probabilistically to reduce ambiguity caused by occlusions or specular surfaces common in medical environments (plastic syringes, reflective trays).</p><p><strong>Embedded Deployment:</strong> The model runs on NVIDIA Jetson Nano. A model quantization and pruning roadmap is in progress to push from the current ~2.0 s/frame research prototype toward real-time operation.</p>
+                    </section>
+
+                    <section>
+                        <h2>Results</h2>
+                        <div class="results-grid"><div class="result-box"><span class="result-val">~30%</span><span class="result-label">Setup time reduction</span></div><div class="result-box"><span class="result-val">~2.0s</span><span class="result-label">Inference on Jetson</span></div><div class="result-box"><span class="result-val">&lt;5%</span><span class="result-label">Pose error</span></div></div>
+                        <p>Eliminating physical markers reduced experimental setup time by approximately 30%. Pose estimation error remained under 5% across all tested object categories in controlled hospital testbed conditions.</p>
+                    </section>
+
+                    <section>
+                        <h2>Media</h2>
+                        <div class="media-placeholder">
+                            <span class="media-icon">🎥</span>
+                            Demo video and project images coming soon.
+                        </div>
+                    </section>
+
+                </div>
+
+                <aside class="detail-sidebar">
+                    <div class="sidebar-card">
+                        <h4>Key Stats</h4>
+                        <div class="sidebar-stat"><strong>~30%</strong><span>Setup time saved</span></div><div class="sidebar-stat"><strong>~2.0s/frame</strong><span>Embedded inference</span></div><div class="sidebar-stat"><strong>&lt;5%</strong><span>Pose error</span></div>
+                    </div>
+                    <div class="sidebar-card">
+                        <h4>Domain</h4>
+                        <p>Perception • 6-DoF Estimation • Healthcare Robotics</p>
+                    </div>
+                    <div class="sidebar-card">
+                        <h4>Affiliation</h4>
+                        <p>WPI HiRO Lab</p>
+                    </div>
+                    <div class="sidebar-card">
+                        <h4>Status</h4>
+                        <p>🟢 Active / Ongoing</p>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Divam Trivedi. Building intelligent robots that see, think, and act.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

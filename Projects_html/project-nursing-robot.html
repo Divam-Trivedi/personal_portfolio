@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nursing Robot Perception Stack | Divam Trivedi</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="projects.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo-space"></div>
+            <ul id="nav-links">
+                <li><a href="../index.html#home">Home</a></li>
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#skills-logos">Skills</a></li>
+                <li><a href="../index.html#experience">Experience</a></li>
+                <li><a href="../projects.html" class="active">Projects</a></li>
+                <li><a href="../index.html#education">Education</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+                <li class="dropdown">
+                    <a href="#">Others ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../creativity.html">Creativity</a></li>
+                        <li><a href="../certificates.html">Certifications</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <div class="project-detail-hero">
+        <div class="container">
+            <div class="project-breadcrumb">
+                <a href="projects.html">Projects</a> &nbsp;/&nbsp; <a href="projects.html#hardware">Hardware</a> &nbsp;/&nbsp; Nursing Robot
+            </div>
+            <div class="hero-meta">
+                <span class="proj-domain hw">Hardware</span>
+                <span class="proj-year">Jul 2025 – Present</span>
+            </div>
+            <h1>Enhancing Nursing Assistance through Perception-Driven Robot Autonomy</h1>
+            <p class="hero-desc">An end-to-end perception and autonomy stack for a bi-manual mobile nurse assistant — from raw sensor data to shared-autonomy task execution in hospital environments.</p>
+            <div class="tech-tags">
+                <span class="tech-tag">ROS2</span>
+                <span class="tech-tag">PyTorch</span>
+                <span class="tech-tag">Intel RealSense</span>
+                <span class="tech-tag">Jetson Nano</span>
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Depth Fusion</span>
+            </div>
+        </div>
+    </div>
+
+    <section class="project-detail-body">
+        <div class="container">
+            <a href="projects.html#hardware" class="back-link">← Back to Projects</a>
+            <div class="detail-grid">
+                <div class="detail-main">
+
+                    <section>
+                        <h2>Overview</h2>
+                        <p>This project develops perception and autonomy capabilities for a bi-manual mobile robot designed to assist nursing staff in hospital environments. The goal is to reduce the manual burden on nurses by enabling the robot to recognize, localize, and interact with common medical objects — bottles, syringes, IV trays — with minimal human intervention.</p>
+                        <p>The system is built on a ROS2 architecture and runs on NVIDIA Jetson Nano for embedded, real-time deployment in controlled hospital testbeds. This is an ongoing research project at WPI's Human-Inspired Robotics (HiRO) Lab.</p>
+                    </section>
+
+                    <section>
+                        <h2>Approach</h2>
+                        <p><strong>Perception Stack:</strong> The system begins with multi-camera calibration across Intel RealSense D435 units to establish a common reference frame. Depth data from multiple viewpoints is fused to generate dense 3D representations of the workspace, enabling robust object detection even under partial occlusions.</p>
+                        <p><strong>Object Recognition:</strong> A trained deep learning pipeline (PyTorch) runs inference on fused RGB-D frames to detect and classify medical objects in real time. The recognizer is coupled with a 6-DoF pose estimator to determine the exact position and orientation of target objects for downstream manipulation.</p>
+                        <p><strong>Shared Autonomy Pipeline:</strong> Rather than fully autonomous or fully teleoperated operation, the system implements a shared-autonomy architecture. The robot can execute high-level tasks autonomously (reach, grasp, hand off) while the human operator retains the ability to override or guide specific steps. This merging of teleoperation and autonomous execution significantly reduces cognitive load on the operator.</p>
+                        <p><strong>Embedded Inference:</strong> All inference runs on the Jetson Nano. Model quantization and pruning pipelines are being developed to bring latency from the current ~2.0 s/frame prototype to real-time targets.</p>
+                    </section>
+
+                    <section>
+                        <h2>Results</h2>
+                        <div class="results-grid">
+                            <div class="result-box">
+                                <span class="result-val">&lt;5%</span>
+                                <span class="result-label">Object pose estimation error in controlled testbeds</span>
+                            </div>
+                            <div class="result-box">
+                                <span class="result-val">~60%</span>
+                                <span class="result-label">Reduction in manual intervention via shared autonomy</span>
+                            </div>
+                            <div class="result-box">
+                                <span class="result-val">~2.0s</span>
+                                <span class="result-label">Per-frame inference latency on Jetson Nano (prototype)</span>
+                            </div>
+                        </div>
+                        <p>The shared-autonomy pipeline has consistently reduced operator intervention by approximately 60% in testbed trials. Pose estimation error remains under 5% across all tested medical object categories. Ongoing work focuses on embedded model optimization for real-time performance.</p>
+                    </section>
+
+                    <section>
+                        <h2>Media</h2>
+                        <div class="media-placeholder">
+                            <span class="media-icon">🎥</span>
+                            Demo video and hardware photos coming soon.
+                        </div>
+                    </section>
+
+                </div>
+
+                <aside class="detail-sidebar">
+                    <div class="sidebar-card">
+                        <h4>Key Stats</h4>
+                        <div class="sidebar-stat"><strong>&lt;5%</strong><span>Pose estimation error</span></div>
+                        <div class="sidebar-stat"><strong>~60%</strong><span>Manual intervention reduced</span></div>
+                        <div class="sidebar-stat"><strong>~2.0s/frame</strong><span>Embedded inference</span></div>
+                    </div>
+                    <div class="sidebar-card">
+                        <h4>Domain</h4>
+                        <p>Robotics • Perception • Healthcare</p>
+                    </div>
+                    <div class="sidebar-card">
+                        <h4>Affiliation</h4>
+                        <p>WPI Human-Inspired Robotics (HiRO) Lab</p>
+                    </div>
+                    <div class="sidebar-card">
+                        <h4>Status</h4>
+                        <p>🟢 Active / Ongoing</p>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Divam Trivedi. Building intelligent robots that see, think, and act.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

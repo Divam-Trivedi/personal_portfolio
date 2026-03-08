@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Corner | Divam Trivedi</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="creative.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo-space"></div>
+            <ul id="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#skills-logos">Skills</a></li>
+                <li><a href="index.html#experience">Experience</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#education">Education</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li class="dropdown">
+                    <a href="#">Others ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="creativity.html">Creativity</a></li>
+                        <li><a href="certificates.html">Certifications</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="creative-header-top">
+        <div class="creative-logo">
+            <img src="Images/pixelated_brains.jpg" alt="Creative Logo">
+        </div>
+
+        <a href="https://instagram.com/pixelated_brains" 
+        class="creative-ig-link" 
+        target="_blank" rel="noopener">
+            <img src="Images/instagram.svg" alt="Instagram" class="ig-icon">
+            <span class="ig-name">Pixelated Brain</span>
+        </a>
+    </div>
+
+
+    <!-- Header -->
+    <header class="creativity-header">
+        <h1>Through My Lens, Through My Lines</h1>
+        <p>Photographs for the eyes, poems for the heart.</p>
+    </header>
+
+    <!-- iOS Style Toggle Pills -->
+    <div class="creativity-toggle">
+        <div class="pill-toggle" id="pill-toggle">
+            <button class="pill-option active" id="photos-btn">Pixels</button>
+            <button class="pill-option" id="poems-btn">Words</button>
+            <div class="pill-slider" id="pill-slider"></div>
+        </div>
+    </div>
+
+    <!-- Photos Section -->
+    <section id="photos-section" class="creativity-section">
+        <h2>Photography</h2>
+        <div class="masonry-grid" id="photo-grid">
+            <!-- List out all photos inside /Photos -->
+            <!-- Add images dynamically here -->
+            <img src="Photos/000-2.png" alt="">
+            <img src="Photos/000-3.png" alt="">
+            <img src="Photos/000-4.png" alt="">
+            <img src="Photos/000-5.png" alt="">
+            <img src="Photos/000.png" alt="">
+            <img src="Photos/IMG_9056.JPG" alt="">
+            <img src="Photos/image_1.png" alt="">
+            <img src="Photos/image_2.png" alt="">
+            <img src="Photos/image_3.png" alt="">
+            <img src="Photos/image_4.png" alt="">
+            <img src="Photos/image_5.png" alt="">
+            <img src="Photos/image_6.png" alt="">
+            <img src="Photos/image_7.png" alt="">
+            <img src="Photos/image_8.png" alt="">
+            <img src="Photos/image_9.png" alt="">
+            <img src="Photos/image_10.png" alt="">
+            <img src="Photos/image_11.png" alt="">
+            <img src="Photos/image_12.png" alt="">
+            <img src="Photos/image_13.png" alt="">
+            <img src="Photos/image_14.png" alt="">
+            <img src="Photos/image_15.png" alt="">
+            <img src="Photos/image_16.png" alt="">
+            <img src="Photos/image_17.png" alt="">
+            <img src="Photos/image_18.png" alt="">
+            <img src="Photos/image_19.png" alt="">
+            <img src="Photos/image_20.png" alt="">
+        </div>
+    </section>
+
+    <!-- Poems Section -->
+    <section id="poems-section" class="creativity-section" style="display:none;">
+        <h2>Poems</h2>
+        <div class="masonry-grid" id="poem-grid">
+
+            <div class="poem-card">
+                <p>Sometimes the world whispers in quiet colors, asking nothing but for you to pause. In that stillness, you learn that beauty doesn’t need an audience — only attention.</p>
+            </div>
+
+            <div class="poem-card">
+                <p>I have walked roads without maps, trusting the pull of somewhere I cannot name. Perhaps we are all guided by little pieces of hope we leave behind unknowingly.</p>
+            </div>
+
+            <div class="poem-card">
+                <p>There is a softness in every sunrise, a reminder that even the darkest night signs its name before leaving. And so do we — returning each morning a little more whole.</p>
+            </div>
+
+            <div class="poem-card">
+                <p>When the mind grows loud, I sit with my breath like an old friend. It tells me that nothing is permanent — not fear, not doubt, not even the weight I once carried.</p>
+            </div>
+
+            <div class="poem-card">
+                <p>Some memories live like lanterns, glowing quietly in the corners of who we are. They do not ask to be remembered, yet they guide us all the same.</p>
+            </div>
+
+            <div class="poem-card">
+                <p>The ocean does not fear its own tides. It rises, it falls, and still it remains whole. I try to learn the same rhythm — to let go without losing myself.</p>
+            </div>
+
+            <div class="poem-card">
+                <p>Every dream begins as a small spark — fragile, flickering, unsure. But in the heart that chooses to protect it, a spark becomes a fire capable of reshaping worlds.</p>
+            </div>
+
+            <div class="poem-card">
+                <p>I write not to be understood, but to understand. In every line I leave a truth I didn’t know I held, and in every pause I discover something new about myself.</p>
+            </div>
+
+            <div class="poem-card">
+                <p>There are days when courage looks like movement, and days it looks like staying still. Either way, the heart knows the way — if only you listen long enough.</p>
+            </div>
+
+            <div class="poem-card">
+                <p>If life is a collection of moments, then may mine be filled with ones that feel like warm light — fleeting yet unforgettable, gentle yet endlessly real.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Tab Switching Script -->
+    <script>
+        const photosBtn = document.getElementById("photos-btn");
+        const poemsBtn = document.getElementById("poems-btn");
+        const photosSection = document.getElementById("photos-section");
+        const poemsSection = document.getElementById("poems-section");
+        const slider = document.getElementById("pill-slider");
+
+        photosBtn.addEventListener("click", () => {
+            photosBtn.classList.add("active");
+            poemsBtn.classList.remove("active");
+
+            photosSection.style.display = "block";
+            poemsSection.style.display = "none";
+
+            slider.style.left = "0%";
+        });
+
+        poemsBtn.addEventListener("click", () => {
+            poemsBtn.classList.add("active");
+            photosBtn.classList.remove("active");
+
+            photosSection.style.display = "none";
+            poemsSection.style.display = "block";
+
+            slider.style.left = "50%";
+        });
+    </script>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Divam Trivedi. Building intelligent robots that see, think, and act.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

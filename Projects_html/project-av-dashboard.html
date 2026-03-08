@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AV Visualization Dashboard | Divam Trivedi</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="projects.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo-space"></div>
+            <ul id="nav-links">
+                <li><a href="../index.html#home">Home</a></li>
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#skills-logos">Skills</a></li>
+                <li><a href="../index.html#experience">Experience</a></li>
+                <li><a href="../projects.html" class="active">Projects</a></li>
+                <li><a href="../index.html#education">Education</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+                <li class="dropdown">
+                    <a href="#">Others ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../creativity.html">Creativity</a></li>
+                        <li><a href="../certificates.html">Certifications</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <div class="project-detail-hero">
+        <div class="container">
+            <div class="project-breadcrumb">
+                <a href="projects.html">Projects</a> &nbsp;/&nbsp; <a href="projects.html#simulation">Simulation</a> &nbsp;/&nbsp; AV Visualization Dashboard
+            </div>
+            <div class="hero-meta">
+                <span class="proj-domain sim">Simulation</span>
+                <span class="proj-year">Apr – May 2025</span>
+            </div>
+            <h1>Autonomous Vehicle Visualization Dashboard</h1>
+            <p class="hero-desc">A 12 FPS real-time dashboard overlaying lane detection, object tracking, pedestrian poses, and collision predictions on Tesla Model S video streams.</p>
+            <div class="tech-tags"><span class="tech-tag">YOLO</span><span class="tech-tag">RAFT</span><span class="tech-tag">OpenPose</span><span class="tech-tag">Blender</span><span class="tech-tag">PyTorch</span><span class="tech-tag">Python</span><span class="tech-tag">Optical Flow</span></div>
+        </div>
+    </div>
+
+    <section class="project-detail-body">
+        <div class="container">
+            <a href="projects.html#simulation" class="back-link">← Back to Projects</a>
+            <div class="detail-grid">
+                <div class="detail-main">
+
+                    <section>
+                        <h2>Overview</h2>
+                        <p>This project builds a comprehensive autonomous vehicle perception visualization dashboard. The system processes dashcam video streams and overlays rich perception outputs — detected lanes, classified vehicles, pedestrian skeletons, and predicted collision zones — at 12 frames per second.</p>
+                    </section>
+
+                    <section>
+                        <h2>Approach</h2>
+                        <p><strong>Object Detection & Classification:</strong> YOLO handles vehicle and pedestrian detection with 3D bounding box estimation for vehicle classification and orientation. Detected objects are tracked across frames using IoU-based association.</p><p><strong>Motion Segmentation:</strong> RAFT optical flow is used to segment moving objects from the static background, enabling dynamic collision zones to be computed based on relative motion trajectories.</p><p><strong>Pedestrian Pose Estimation:</strong> OpenPose provides full 2D skeleton estimation for detected pedestrians, enabling pose-based intent prediction (e.g., about to cross road vs. walking parallel).</p><p><strong>Visualization & Replay:</strong> All overlays are rendered at 12 FPS in real time. Annotated sequences are also exported to Blender for frame-accurate review and analysis.</p>
+                    </section>
+
+                    <section>
+                        <h2>Results</h2>
+                        <div class="results-grid"><div class="result-box"><span class="result-val">12 FPS</span><span class="result-label">Real-time overlay</span></div><div class="result-box"><span class="result-val">3D</span><span class="result-label">Vehicle classification</span></div><div class="result-box"><span class="result-val">Full</span><span class="result-label">Collision prediction</span></div></div>
+                        <p>The pipeline runs at a consistent 12 FPS on GPU hardware with all perception modules active simultaneously. The multi-modal overlay (lanes + objects + poses + collision zones) provides significantly richer scene understanding than any single-model baseline.</p>
+                    </section>
+
+                    <section>
+                        <h2>Media</h2>
+                        <div class="media-placeholder">
+                            <span class="media-icon">🎥</span>
+                            Demo video and project images coming soon.
+                        </div>
+                    </section>
+
+                </div>
+
+                <aside class="detail-sidebar">
+                    <div class="sidebar-card">
+                        <h4>Key Stats</h4>
+                        <div class="sidebar-stat"><strong>12 FPS</strong><span>Overlay throughput</span></div><div class="sidebar-stat"><strong>3D+Pose</strong><span>Multi-modal output</span></div>
+                    </div>
+                    <div class="sidebar-card">
+                        <h4>Domain</h4>
+                        <p>Autonomous Vehicles • Perception • Visualization</p>
+                    </div>
+                    <div class="sidebar-card">
+                        <h4>Affiliation</h4>
+                        <p>WPI</p>
+                    </div>
+                    <div class="sidebar-card">
+                        <h4>Status</h4>
+                        <p>🔵 Completed</p>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Divam Trivedi. Building intelligent robots that see, think, and act.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
