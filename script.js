@@ -72,31 +72,49 @@ document.querySelectorAll('.skill-icon').forEach(img => {
 
 // Typing animation for name
 document.addEventListener("DOMContentLoaded", () => {
-    const text = "Divam Trivedi";
     const target = document.getElementById("typed-name");
-    let index = 0;
-
-    function typeLetter() {
-        if (index < text.length) {
-            target.textContent += text.charAt(index);
-            index++;
-            setTimeout(typeLetter, 120); // typing speed
+    if (target) {
+        const text = "Divam Trivedi";
+        let index = 0;
+        function typeLetter() {
+            if (index < text.length) {
+                target.textContent += text.charAt(index);
+                index++;
+                setTimeout(typeLetter, 120);
+            }
         }
+        typeLetter();
     }
 
-    typeLetter();
+    // Load poems from JSON
+    fetch('poems.json')
+        .then(res => res.json())
+        .then(poems => {
+            const grid = document.getElementById('poem-grid');
+            if (!grid) return;
+            poems.forEach(poem => {
+                const card = document.createElement('div');
+                card.className = 'poem-card';
+                card.innerHTML = poem.title
+                    ? `<h3>${poem.title}</h3><p>${poem.text.replace(/\n/g, '<br>')}</p>`
+                    : `<p>${poem.text.replace(/\n/g, '<br>')}</p>`;
+                grid.appendChild(card);
+            });
+        })
+        .catch(err => console.error('Failed to load poems:', err));
 });
 
 // Get elements
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('nav-links');
 
-// Toggle menu on hamburger click
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('active');
-  navLinks.classList.toggle('active');
-  document.body.classList.toggle('menu-open');
-});
+if (hamburger) {
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('active');
+        document.body.classList.toggle('menu-open');
+    });
+}
 
 // Close mobile menu when clicking a nav link
 document.querySelectorAll('#nav-links a').forEach(a => {
