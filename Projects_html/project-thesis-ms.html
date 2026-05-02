@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M.S. Thesis — IONA Nursing Robot | Divam Trivedi</title>
+    <link rel="icon" href="../Images/logo_dt.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="projects.css">
+    <style>
+        /* ── Thesis Hero ── */
+        .thesis-hero {
+            position: relative;
+            padding: 7rem 0 5rem;
+            background: linear-gradient(160deg, #0b0f1a 0%, #0f172a 45%, #0a1628 100%);
+            overflow: hidden;
+        }
+
+        .thesis-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 900px 600px at 70% 30%, rgba(59,130,246,0.12) 0%, transparent 70%),
+                radial-gradient(ellipse 500px 400px at 15% 80%, rgba(99,102,241,0.08) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        /* subtle grid */
+        .thesis-hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            pointer-events: none;
+        }
+
+        .thesis-hero .container {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+        }
+
+        .thesis-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #60a5fa;
+            background: rgba(59,130,246,0.12);
+            border: 1px solid rgba(59,130,246,0.25);
+            padding: 0.4rem 1rem;
+            border-radius: 999px;
+            margin-bottom: 1.5rem;
+        }
+
+        .thesis-eyebrow::before {
+            content: '🎓';
+            font-size: 0.9rem;
+        }
+
+        .thesis-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(1.9rem, 4.5vw, 3.1rem);
+            font-weight: 400;
+            line-height: 1.18;
+            color: #f1f5f9;
+            margin: 0 0 1.2rem;
+            letter-spacing: -0.01em;
+        }
+
+        .thesis-title em {
+            font-style: italic;
+            color: #93c5fd;
+        }
+
+        .thesis-subtitle {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.05rem;
+            color: #94a3b8;
+            line-height: 1.7;
+            max-width: 780px;
+            margin-bottom: 2.2rem;
+        }
+
+        /* ── CTA Buttons ── */
+        .thesis-cta-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.85rem;
+            margin-bottom: 2.8rem;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.65rem 1.4rem;
+            border-radius: 999px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.88rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+        }
+
+        .cta-btn:active { transform: translateY(0); }
+
+        /* GitHub — black pill */
+        .cta-github {
+            background: #000;
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+        .cta-github:hover { background: #111; }
+
+        /* PDF — deep red pill */
+        .cta-pdf {
+            background: #c0392b;
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.12);
+        }
+        .cta-pdf:hover { background: #e74c3c; }
+
+        /* PowerPoint — orange pill */
+        .cta-ppt {
+            background: #d35400;
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.12);
+        }
+        .cta-ppt:hover { background: #e67e22; }
+
+        .cta-btn svg { flex-shrink: 0; }
+
+        /* ── Meta badges ── */
+        .thesis-meta-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            border-top: 1px solid rgba(255,255,255,0.07);
+            padding-top: 1.8rem;
+        }
+
+        .thesis-meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+
+        .meta-label {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #475569;
+        }
+
+        .meta-value {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.9rem;
+            color: #cbd5e1;
+        }
+
+        /* ── Body ── */
+        .thesis-body {
+            background: #0f172a;
+            padding: 5rem 0;
+        }
+
+        .thesis-body .container {
+            max-width: 1100px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.85rem;
+            color: #60a5fa;
+            text-decoration: none;
+            margin-bottom: 3rem;
+            transition: gap 0.15s ease;
+        }
+        .back-link:hover { gap: 0.7rem; }
+
+        /* ── Layout: main + sidebar ── */
+        .thesis-layout {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 3.5rem;
+            align-items: start;
+        }
+
+        @media (max-width: 900px) {
+            .thesis-layout { grid-template-columns: 1fr; }
+            .thesis-sidebar { order: -1; }
+        }
+
+        /* ── Sections ── */
+        .thesis-section {
+            margin-bottom: 3.5rem;
+        }
+
+        .thesis-section h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.6rem;
+            font-weight: 400;
+            color: #f1f5f9;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+        }
+
+        .thesis-section p {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.97rem;
+            color: #94a3b8;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        /* Abstract callout */
+        .abstract-block {
+            background: rgba(59,130,246,0.06);
+            border-left: 3px solid #3b82f6;
+            border-radius: 0 8px 8px 0;
+            padding: 1.4rem 1.6rem;
+            margin: 1.5rem 0;
+        }
+
+        .abstract-block p {
+            font-size: 0.95rem;
+            font-style: italic;
+            color: #bfdbfe;
+            line-height: 1.85;
+            margin: 0;
+        }
+
+        /* ── Key Results Grid ── */
+        .results-grid-thesis {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .result-card {
+            background: linear-gradient(135deg, rgba(30,41,59,0.8) 0%, rgba(15,23,42,0.9) 100%);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 12px;
+            padding: 1.4rem 1.2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .result-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #3b82f6, #6366f1);
+        }
+
+        .result-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(59,130,246,0.3);
+        }
+
+        .result-num {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2rem;
+            color: #60a5fa;
+            display: block;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .result-desc {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.78rem;
+            color: #64748b;
+            line-height: 1.5;
+        }
+
+        /* ── Architecture / Pipeline ── */
+        .pipeline-diagram {
+            background: rgba(15,23,42,0.8);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 14px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+            overflow: hidden;
+        }
+
+        .pipeline-steps {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .pipe-step {
+            background: rgba(30,41,59,0.9);
+            border: 1px solid rgba(59,130,246,0.2);
+            border-radius: 8px;
+            padding: 0.85rem 1.1rem;
+            text-align: center;
+            min-width: 110px;
+            flex: 1;
+        }
+
+        .pipe-step-icon {
+            font-size: 1.4rem;
+            display: block;
+            margin-bottom: 0.4rem;
+        }
+
+        .pipe-step-name {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #93c5fd;
+            display: block;
+        }
+
+        .pipe-arrow {
+            color: #334155;
+            font-size: 1.2rem;
+            padding: 0 0.3rem;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 600px) {
+            .pipeline-steps { flex-direction: column; gap: 0.5rem; }
+            .pipe-arrow { transform: rotate(90deg); }
+        }
+
+        /* ── Contributions list ── */
+        .contribution-list {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .contribution-list li {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.94rem;
+            color: #94a3b8;
+            line-height: 1.65;
+            padding-left: 1.6rem;
+            position: relative;
+        }
+
+        .contribution-list li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #3b82f6;
+            font-size: 0.85rem;
+            top: 0.1rem;
+        }
+
+        .contribution-list li strong {
+            color: #e2e8f0;
+        }
+
+        /* ── Comparison table ── */
+        .comp-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.2rem 0;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.88rem;
+        }
+
+        .comp-table th {
+            background: rgba(30,41,59,0.8);
+            color: #60a5fa;
+            font-weight: 600;
+            padding: 0.7rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(59,130,246,0.2);
+        }
+
+        .comp-table td {
+            padding: 0.65rem 1rem;
+            color: #94a3b8;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+        }
+
+        .comp-table tr:last-child td { border-bottom: none; }
+
+        .comp-table tr:hover td {
+            background: rgba(30,41,59,0.4);
+            color: #cbd5e1;
+        }
+
+        .tag-high { color: #4ade80; font-weight: 600; }
+        .tag-med  { color: #facc15; font-weight: 600; }
+        .tag-low  { color: #f87171; font-weight: 600; }
+
+        /* ── Task performance ── */
+        .task-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.2rem 0;
+        }
+
+        .task-card {
+            background: rgba(15,23,42,0.7);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 10px;
+            padding: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            transition: border-color 0.2s;
+        }
+
+        .task-card:hover { border-color: rgba(59,130,246,0.25); }
+
+        .task-name {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .task-rate {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.8rem;
+            color: #60a5fa;
+        }
+
+        .task-detail {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.78rem;
+            color: #475569;
+        }
+
+        .progress-bar {
+            height: 4px;
+            background: rgba(255,255,255,0.06);
+            border-radius: 999px;
+            overflow: hidden;
+            margin-top: 0.3rem;
+        }
+
+        .progress-fill {
+            height: 100%;
+            border-radius: 999px;
+            background: linear-gradient(90deg, #3b82f6, #6366f1);
+        }
+
+        /* ── Tech tags in body ── */
+        .thesis-tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .thesis-tech-tags .tech-tag {
+            background: rgba(59,130,246,0.1);
+            color: #93c5fd;
+            border: 1px solid rgba(59,130,246,0.2);
+            padding: 0.3rem 0.75rem;
+            border-radius: 999px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.78rem;
+            font-weight: 500;
+        }
+
+        /* ── Media placeholder ── */
+        .media-placeholder-thesis {
+            background: rgba(15,23,42,0.6);
+            border: 2px dashed rgba(59,130,246,0.2);
+            border-radius: 12px;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin: 1.2rem 0;
+        }
+
+        .media-placeholder-thesis .media-icon { font-size: 2.2rem; display: block; margin-bottom: 0.8rem; }
+        .media-placeholder-thesis p {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.88rem;
+            color: #475569;
+            margin: 0;
+        }
+
+        /* ── Sidebar ── */
+        .thesis-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .sidebar-box {
+            background: rgba(15,23,42,0.8);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 12px;
+            padding: 1.4rem;
+        }
+
+        .sidebar-box h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #475569;
+            margin: 0 0 1rem;
+        }
+
+        .sidebar-stat {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 0.55rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            gap: 0.8rem;
+        }
+
+        .sidebar-stat:last-child { border-bottom: none; }
+
+        .sidebar-stat strong {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.15rem;
+            color: #60a5fa;
+            white-space: nowrap;
+        }
+
+        .sidebar-stat span {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.78rem;
+            color: #64748b;
+            text-align: right;
+            line-height: 1.4;
+        }
+
+        .sidebar-box p {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.88rem;
+            color: #94a3b8;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.82rem;
+            color: #4ade80;
+        }
+
+        .status-dot {
+            width: 7px; height: 7px;
+            border-radius: 50%;
+            background: #4ade80;
+            box-shadow: 0 0 6px #4ade80;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        .advisor-row {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .advisor-item {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.82rem;
+            color: #94a3b8;
+            line-height: 1.4;
+        }
+
+        .advisor-role {
+            font-size: 0.7rem;
+            color: #475569;
+            display: block;
+        }
+
+        /* ── Quick links in sidebar ── */
+        .sidebar-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .sidebar-link {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.6rem 0.8rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.83rem;
+            font-weight: 500;
+            transition: background 0.15s ease;
+        }
+
+        .sidebar-link.gh { background: rgba(0,0,0,0.4); color: #e2e8f0; border: 1px solid rgba(255,255,255,0.1); }
+        .sidebar-link.gh:hover { background: rgba(0,0,0,0.7); }
+        .sidebar-link.pdf { background: rgba(192,57,43,0.15); color: #fca5a5; border: 1px solid rgba(192,57,43,0.2); }
+        .sidebar-link.pdf:hover { background: rgba(192,57,43,0.25); }
+        .sidebar-link.ppt { background: rgba(211,84,0,0.15); color: #fdba74; border: 1px solid rgba(211,84,0,0.2); }
+        .sidebar-link.ppt:hover { background: rgba(211,84,0,0.25); }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .thesis-cta-row { flex-direction: column; }
+            .cta-btn { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation (matches site) -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo-space"></div>
+            <ul id="nav-links">
+                <li><a href="../index.html#home">Home</a></li>
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#skills-logos">Skills</a></li>
+                <li><a href="../index.html#experience">Experience</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="../index.html#education">Education</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+                <li class="dropdown">
+                    <a href="#">Others ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../creativity.html">Creativity</a></li>
+                        <li><a href="../certificates.html">Certifications</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <!-- ── THESIS HERO ── -->
+    <section class="thesis-hero">
+        <div class="container">
+
+            <div class="thesis-eyebrow">Master of Science in Robotics — Thesis</div>
+
+            <h1 class="thesis-title">
+                Autonomous Perception for<br>
+                <em>Mobile Manipulator Nursing Robot</em>
+            </h1>
+
+            <p class="thesis-subtitle">
+                An end-to-end autonomous perception framework for IONA — a bi-manual mobile nursing robot — integrating hybrid 6D pose estimation, visual SLAM navigation, and human-aware interaction for real-world assistive tasks.
+            </p>
+
+            <!-- ── CTA Buttons ── -->
+            <div class="thesis-cta-row">
+
+                <!-- GitHub -->
+                <a href="https://github.com/Divam-Trivedi" target="_blank" class="cta-btn cta-github">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.477 2 2 6.484 2 12.021c0 4.428 2.865 8.184 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.339-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.026 2.747-1.026.546 1.378.202 2.397.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482C19.138 20.2 22 16.447 22 12.021 22 6.484 17.522 2 12 2z"/>
+                    </svg>
+                    GitHub
+                </a>
+
+                <!-- PDF -->
+                <a href="https://drive.google.com/file/d/1aqcciRS87YzAaSZ3cUTNdq5gGa7X2XaG/view?usp=sharing" target="_blank" class="cta-btn cta-pdf">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+                        <polyline points="14 2 14 8 20 8" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+                        <line x1="9" y1="13" x2="15" y2="13" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="9" y1="17" x2="15" y2="17" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="9" y1="9" x2="11" y2="9" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    PDF
+                </a>
+
+                <!-- PowerPoint -->
+                <a href="https://canva.link/65177xytjn9kv23" target="_blank" class="cta-btn cta-ppt">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="2" y="3" width="20" height="14" rx="2" stroke="white" stroke-width="2"/>
+                        <path d="M8 21h8M12 17v4" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        <rect x="6" y="7" width="5" height="6" rx="1" fill="white" opacity="0.7"/>
+                        <line x1="13" y1="8" x2="17" y2="8" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                        <line x1="13" y1="11" x2="16" y2="11" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                    Slides
+                </a>
+
+            </div>
+
+            <!-- ── Meta info bar ── -->
+            <div class="thesis-meta-row">
+                <div class="thesis-meta-item">
+                    <span class="meta-label">Institution</span>
+                    <span class="meta-value">Worcester Polytechnic Institute</span>
+                </div>
+                <div class="thesis-meta-item">
+                    <span class="meta-label">Degree</span>
+                    <span class="meta-value">M.S. Robotics Engineering</span>
+                </div>
+                <div class="thesis-meta-item">
+                    <span class="meta-label">Advisor</span>
+                    <span class="meta-value">Prof. Jane Li</span>
+                </div>
+                <div class="thesis-meta-item">
+                    <span class="meta-label">Year</span>
+                    <span class="meta-value">May 2026</span>
+                </div>
+                <div class="thesis-meta-item">
+                    <span class="meta-label">Lab</span>
+                    <span class="meta-value">HiRO Lab</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ── BODY ── -->
+    <section class="thesis-body">
+        <div class="container">
+            <a href="projects.html" class="back-link">← Back to Projects</a>
+
+            <div class="thesis-layout">
+
+                <!-- ── MAIN CONTENT ── -->
+                <main>
+
+                    <!-- Abstract -->
+                    <div class="thesis-section">
+                        <h2>Abstract</h2>
+                        <div class="abstract-block">
+                            <p>
+                                Nursing shortages and the cognitive demands of clinical work motivate autonomous robotic assistance in healthcare. Existing approaches rely either on continuous teleoperation or data-intensive learning methods impractical for real-world deployment. This thesis presents an autonomous perception framework for a mobile manipulator nursing robot (IONA — Intelligent rObotics Nursing Assistant) combining a YOLO-based object detector with a hybrid 6D pose estimation pipeline — PoseMate, a high-precision mesh-based estimator, and LazyPose, a real-time approximator at 4 Hz — alongside visual SLAM-based navigation and human-aware perception. A validation-based filtering mechanism rejects inconsistent pose estimates before aggregation. Evaluated on a physical platform across representative nursing tasks, the system achieved a <strong>90% pick-and-place success rate</strong> with sub-0.5 cm positional error and rotational error below 5°, and <strong>80% navigation success</strong>. These results demonstrate that practical assistive robotics can be achieved through structured perception and modular execution, without reliance on continuous human control or data-intensive learning.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Key Results -->
+                    <div class="thesis-section">
+                        <h2>Key Results</h2>
+                        <div class="results-grid-thesis">
+                            <div class="result-card">
+                                <span class="result-num">90%</span>
+                                <span class="result-desc">Pick-and-place task success rate</span>
+                            </div>
+                            <div class="result-card">
+                                <span class="result-num">&lt;0.5cm</span>
+                                <span class="result-desc">Positional error in planar axes (PoseMate)</span>
+                            </div>
+                            <div class="result-card">
+                                <span class="result-num">&lt;5°</span>
+                                <span class="result-desc">Rotational error across all axes</span>
+                            </div>
+                            <div class="result-card">
+                                <span class="result-num">80%</span>
+                                <span class="result-desc">Navigation success rate (indoor)</span>
+                            </div>
+                            <div class="result-card">
+                                <span class="result-num">4 Hz</span>
+                                <span class="result-desc">LazyPose real-time inference rate</span>
+                            </div>
+                            <div class="result-card">
+                                <span class="result-num">18</span>
+                                <span class="result-desc">Object classes (food + medical) in custom dataset</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- System Overview -->
+                    <div class="thesis-section">
+                        <h2>System Overview</h2>
+                        <p>
+                            IONA is a bi-manual mobile humanoid robot built in-house at WPI's Human-Inspired Robotics (HiRO) Lab. It features a Fetch Freight 100 mobile base, dual Kinova Gen3 7-DoF arms with Robotiq parallel grippers, and a multi-camera RGB-D sensing suite. The software stack is distributed across a ROS Noetic robot-side system and an ROS2 Humble external compute node communicating over a custom TCP/UDP bridge.
+                        </p>
+                        <p>
+                            This thesis integrates a modular perception subsystem into IONA's existing architecture, transitioning it from a predominantly teleoperated platform toward structured autonomy for representative nursing tasks — pick and place, shelf organization, and device manipulation.
+                        </p>
+
+                        <!-- Pipeline diagram -->
+                        <div class="pipeline-diagram">
+                            <div class="pipeline-steps">
+                                <div class="pipe-step">
+                                    <span class="pipe-step-icon">📷</span>
+                                    <span class="pipe-step-name">Scene<br>Observation</span>
+                                </div>
+                                <span class="pipe-arrow">→</span>
+                                <div class="pipe-step">
+                                    <span class="pipe-step-icon">🔍</span>
+                                    <span class="pipe-step-name">Object<br>Detection</span>
+                                </div>
+                                <span class="pipe-arrow">→</span>
+                                <div class="pipe-step">
+                                    <span class="pipe-step-icon">📐</span>
+                                    <span class="pipe-step-name">Pose<br>Estimation</span>
+                                </div>
+                                <span class="pipe-arrow">→</span>
+                                <div class="pipe-step">
+                                    <span class="pipe-step-icon">🗺️</span>
+                                    <span class="pipe-step-name">Motion<br>Planning</span>
+                                </div>
+                                <span class="pipe-arrow">→</span>
+                                <div class="pipe-step">
+                                    <span class="pipe-step-icon">🤖</span>
+                                    <span class="pipe-step-name">Task<br>Execution</span>
+                                </div>
+                                <span class="pipe-arrow">→</span>
+                                <div class="pipe-step">
+                                    <span class="pipe-step-icon">👁️</span>
+                                    <span class="pipe-step-name">Human<br>Monitoring</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="thesis-tech-tags">
+                            <span class="tech-tag">ROS2 Humble</span>
+                            <span class="tech-tag">ROS Noetic</span>
+                            <span class="tech-tag">PyTorch</span>
+                            <span class="tech-tag">Intel RealSense D435</span>
+                            <span class="tech-tag">Kinova Gen3</span>
+                            <span class="tech-tag">MoveIt + OMPL</span>
+                            <span class="tech-tag">RTAB-Map</span>
+                            <span class="tech-tag">Detectron2</span>
+                            <span class="tech-tag">FoundationPose</span>
+                            <span class="tech-tag">MMPose</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">OpenCV</span>
+                        </div>
+                    </div>
+
+                    <!-- Hybrid Pose Estimation -->
+                    <div class="thesis-section">
+                        <h2>Hybrid Pose Estimation</h2>
+                        <p>
+                            A central contribution of the thesis is a dual-mode pose estimation framework that selects between accuracy and speed based on the task and object properties.
+                        </p>
+
+                        <table class="comp-table">
+                            <thead>
+                                <tr>
+                                    <th>Method</th>
+                                    <th>Speed</th>
+                                    <th>Accuracy</th>
+                                    <th>Planar Error</th>
+                                    <th>Depth Error</th>
+                                    <th>Use Case</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong style="color:#93c5fd">PoseMate</strong></td>
+                                    <td><span class="tag-low">10–20 s</span></td>
+                                    <td><span class="tag-high">High</span></td>
+                                    <td>&lt; 0.5 cm</td>
+                                    <td>~1.5 cm</td>
+                                    <td>Complex objects</td>
+                                </tr>
+                                <tr>
+                                    <td><strong style="color:#93c5fd">LazyPose</strong></td>
+                                    <td><span class="tag-high">~4 Hz</span></td>
+                                    <td><span class="tag-med">Moderate</span></td>
+                                    <td>&lt; 1 cm</td>
+                                    <td>&lt; 3 cm</td>
+                                    <td>Simple / predictable</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <p>
+                            <strong>PoseMate</strong> is built on the FoundationPose framework and uses RGB-D data, instance segmentation masks, and pre-scanned object meshes to compute full 6D pose. A validation pipeline (depth error, mask reprojection IoU) filters and aggregates across five captured frames before accepting a final estimate.
+                        </p>
+                        <p>
+                            <strong>LazyPose</strong> provides a lightweight real-time 4D pose (3D position + planar yaw) by applying PCA on the segmentation mask and retrieving depth at the median pixel — enabling continuous streaming at 4 Hz for predictable objects.
+                        </p>
+                    </div>
+
+                    <!-- Task Performance -->
+                    <div class="thesis-section">
+                        <h2>Task-Level Performance</h2>
+                        <div class="task-grid">
+                            <div class="task-card">
+                                <span class="task-name">Pick &amp; Place</span>
+                                <span class="task-rate">90%</span>
+                                <span class="task-detail">~30 s per object avg.</span>
+                                <div class="progress-bar"><div class="progress-fill" style="width:90%"></div></div>
+                            </div>
+                            <div class="task-card">
+                                <span class="task-name">Navigation</span>
+                                <span class="task-rate">80%</span>
+                                <span class="task-detail">RTAB-Map visual SLAM</span>
+                                <div class="progress-bar"><div class="progress-fill" style="width:80%"></div></div>
+                            </div>
+                            <div class="task-card">
+                                <span class="task-name">Shelf Org.</span>
+                                <span class="task-rate">✓</span>
+                                <span class="task-detail">Fiducial-guided placement</span>
+                                <div class="progress-bar"><div class="progress-fill" style="width:75%"></div></div>
+                            </div>
+                            <div class="task-card">
+                                <span class="task-name">Device Manip.</span>
+                                <span class="task-rate">✓</span>
+                                <span class="task-detail">Pump &amp; device control</span>
+                                <div class="progress-bar"><div class="progress-fill" style="width:70%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Key Contributions -->
+                    <div class="thesis-section">
+                        <h2>Key Contributions</h2>
+                        <ul class="contribution-list">
+                            <li><strong>Integrated Perception Module into IONA:</strong> Transitioned IONA from a teleoperated platform to a structured autonomous system by incorporating object detection, pose estimation, active camera selection, and human-aware monitoring.</li>
+                            <li><strong>Hybrid Pose Estimation Framework:</strong> A dual-mode system combining fast approximate estimation (LazyPose) with accurate mesh-based estimation (PoseMate), selected dynamically based on object characteristics.</li>
+                            <li><strong>Custom Dataset &amp; Mesh Pipeline:</strong> Collected and annotated ~1,200 images across 18 medical and food object classes using Roboflow; acquired 3D meshes via handheld Creality scanner and Blender post-processing.</li>
+                            <li><strong>Active Viewpoint Selection:</strong> Task-driven single-camera selection strategy as a practical alternative to computationally expensive multi-camera fusion.</li>
+                            <li><strong>Extensible Perception Architecture:</strong> Modular design enabling new object classes, meshes, and task routines to be added with minimal changes to the pipeline.</li>
+                            <li><strong>End-to-End Task Pipelines:</strong> Functional integration for pick-and-place, shelf organization, and device manipulation demonstrating perception-driven autonomous execution on a physical robot.</li>
+                            <li><strong>Human-Aware Execution:</strong> Velocity-threshold-based motion monitoring with automatic pause and retraction, enabling safe co-existence in shared spaces.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Hardware -->
+                    <div class="thesis-section">
+                        <h2>Hardware Platform</h2>
+                        <p>IONA integrates the following hardware into a ~1700 mm tall bi-manual mobile humanoid:</p>
+                        <ul class="contribution-list">
+                            <li><strong>Mobile Base:</strong> Fetch Freight 100 — indoor navigation with dedicated RGB-D camera for SLAM.</li>
+                            <li><strong>Arms:</strong> 2× Kinova Gen3 7-DoF with Robotiq 2-finger parallel grippers (85 mm).</li>
+                            <li><strong>Cameras:</strong> Chest Intel RealSense D435 (primary detection), Neck D435 (scene/human tracking), Left Wrist Kinova camera (close-range), Base D435i with IMU (navigation/SLAM).</li>
+                            <li><strong>Compute:</strong> Onboard Fetch computer (ROS Noetic) + External workstation Intel i7 / RTX 3080 (ROS2 Humble, perception + planning).</li>
+                        </ul>
+                    </div>
+
+                    <!-- Navigation -->
+                    <div class="thesis-section">
+                        <h2>Navigation &amp; Spatial Awareness</h2>
+                        <p>Navigation is implemented as an independent ROS Noetic module using <strong>RTAB-Map</strong> for visual RGB-D SLAM (mapping + localization) and the <strong>move_base</strong> framework with DWA local planner for goal-directed motion planning. The system uses only a single RealSense D435i for all navigation sensing (RGB, depth, IMU), keeping the pipeline simple and consistent.</p>
+                        <p>Maps are built offline via teleoperation and reloaded for autonomous deployment. Loop closure detection corrects accumulated drift during localization. Navigation and manipulation are sequenced, not concurrent, reducing system complexity.</p>
+                    </div>
+
+                    <!-- Media -->
+                    <div class="thesis-section">
+                        <h2>Media &amp; Demos</h2>
+                        <div class="media-placeholder-thesis">
+                            <span class="media-icon">🎥</span>
+                            <p>Demo videos, hardware photos, and experiment recordings coming soon.<br>Check the GitHub repository for the latest updates.</p>
+                        </div>
+                    </div>
+
+                </main>
+
+                <!-- ── SIDEBAR ── -->
+                <aside class="thesis-sidebar">
+
+                    <!-- Quick links -->
+                    <div class="sidebar-box">
+                        <h4>Quick Links</h4>
+                        <div class="sidebar-links">
+                            <a href="https://github.com/Divam-Trivedi" target="_blank" class="sidebar-link gh">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.021c0 4.428 2.865 8.184 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.339-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.026 2.747-1.026.546 1.378.202 2.397.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482C19.138 20.2 22 16.447 22 12.021 22 6.484 17.522 2 12 2z"/></svg>
+                                GitHub Repository
+                            </a>
+                            <a href="https://drive.google.com/file/d/1aqcciRS87YzAaSZ3cUTNdq5gGa7X2XaG/view?usp=sharing" target="_blank" class="sidebar-link pdf">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/><polyline points="14 2 14 8 20 8"/></svg>
+                                Read the Thesis (PDF)
+                            </a>
+                            <a href="https://canva.link/65177xytjn9kv23" target="_blank" class="sidebar-link ppt">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                                Defense Slides (PPT)
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Key stats -->
+                    <div class="sidebar-box">
+                        <h4>Key Metrics</h4>
+                        <div class="sidebar-stat"><strong>90%</strong><span>Pick &amp; place success</span></div>
+                        <div class="sidebar-stat"><strong>80%</strong><span>Navigation success</span></div>
+                        <div class="sidebar-stat"><strong>&lt;0.5cm</strong><span>Planar position error</span></div>
+                        <div class="sidebar-stat"><strong>&lt;5°</strong><span>Rotational error</span></div>
+                        <div class="sidebar-stat"><strong>4 Hz</strong><span>LazyPose inference rate</span></div>
+                        <div class="sidebar-stat"><strong>18</strong><span>Object classes</span></div>
+                        <div class="sidebar-stat"><strong>1,200+</strong><span>Annotated images</span></div>
+                    </div>
+
+                    <!-- Status -->
+                    <div class="sidebar-box">
+                        <h4>Status</h4>
+                        <div class="status-badge"><span class="status-dot"></span> Active — May 2026</div>
+                    </div>
+
+                    <!-- Advisors -->
+                    <div class="sidebar-box">
+                        <h4>Committee</h4>
+                        <div class="advisor-row">
+                            <div class="advisor-item">
+                                <strong>Prof. Jane Li</strong>
+                                <span class="advisor-role">Major Thesis Advisor</span>
+                            </div>
+                            <div class="advisor-item">
+                                <strong>Prof. Constantinos Chamzas</strong>
+                                <span class="advisor-role">Committee Member</span>
+                            </div>
+                            <div class="advisor-item">
+                                <strong>Prof. Fiona Yuan</strong>
+                                <span class="advisor-role">Committee Member</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Domain -->
+                    <div class="sidebar-box">
+                        <h4>Domain</h4>
+                        <p>Robotics • Perception • Healthcare • Mobile Manipulation • SLAM • Human-Robot Interaction</p>
+                    </div>
+
+                    <!-- Affiliation -->
+                    <div class="sidebar-box">
+                        <h4>Affiliation</h4>
+                        <p>WPI Human-Inspired Robotics (HiRO) Lab<br><br>Worcester Polytechnic Institute<br>Worcester, MA</p>
+                    </div>
+
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Divam Trivedi. Building intelligent robots that see, think, and act.</p>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

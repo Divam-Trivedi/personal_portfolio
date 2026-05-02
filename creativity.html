@@ -65,36 +65,33 @@
 
     <!-- Photos Section -->
     <section id="photos-section" class="creativity-section">
-        <h2>Photography (Under Construction)</h2>
+        <h2>Photography</h2>
         <div class="masonry-grid" id="photo-grid">
-            <!-- List out all photos inside /Photos -->
-            <!-- Add images dynamically here -->
-            <img src="Photos/000-2.png" alt="">
-            <img src="Photos/000-3.png" alt="">
-            <img src="Photos/000-4.png" alt="">
-            <img src="Photos/000-5.png" alt="">
-            <img src="Photos/000.png" alt="">
-            <img src="Photos/IMG_9056.JPG" alt="">
-            <img src="Photos/image_1.png" alt="">
-            <img src="Photos/image_2.png" alt="">
-            <img src="Photos/image_3.png" alt="">
-            <img src="Photos/image_4.png" alt="">
-            <img src="Photos/image_5.png" alt="">
-            <img src="Photos/image_6.png" alt="">
-            <img src="Photos/image_7.png" alt="">
-            <img src="Photos/image_8.png" alt="">
-            <img src="Photos/image_9.png" alt="">
-            <img src="Photos/image_10.png" alt="">
-            <img src="Photos/image_11.png" alt="">
-            <img src="Photos/image_12.png" alt="">
-            <img src="Photos/image_13.png" alt="">
-            <img src="Photos/image_14.png" alt="">
-            <img src="Photos/image_15.png" alt="">
-            <img src="Photos/image_16.png" alt="">
-            <img src="Photos/image_17.png" alt="">
-            <img src="Photos/image_18.png" alt="">
-            <img src="Photos/image_19.png" alt="">
-            <img src="Photos/image_20.png" alt="">
+            <!-- Load generated list -->
+            <script src="photos_list.js"></script>
+
+            <!-- Then shuffle and render -->
+            <script>
+                function shuffle(arr) {
+                    for (let i = arr.length - 1; i > 0; i--) {
+                        const j = Math.floor(Math.random() * (i + 1));
+                        [arr[i], arr[j]] = [arr[j], arr[i]];
+                    }
+                    return arr;
+                }
+
+                const grid = document.getElementById("photo-grid");
+                grid.innerHTML = "";
+
+                shuffle(photosList).forEach(src => {
+                    const img = document.createElement("img");
+                    img.src = src;
+                    img.alt = "";
+                    img.loading = "lazy";
+                    grid.appendChild(img);
+                });
+            </script>
+            
         </div>
     </section>
 
