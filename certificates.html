@@ -29,6 +29,12 @@
                     </ul>
                 </li>
             </ul>
+            <!-- Hamburger for mobile -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
 
@@ -37,111 +43,160 @@
         <h1 style="color: var(--text-light); font-size: clamp(2rem, 6vw, 3rem);">Certifications</h1>
     </section>
 
-    <!-- Certifications Grid -->
-    <section id="Certifications">
-    <div class="container">
-        <div class="cert-grid">
+    <!-- Certifications Section -->
+    <section id="certifications">
+        <div class="container">
 
-            <!-- Machine Learning Certifications -->
-            <div class="cert-card">
-                <img src="Certifications/Divam Trivedi - Computer Vision.png" alt="Computer Vision Certificate">
-                <h3>Computer Vision</h3>
-                <p class="issuer">Divam Trivedi</p>
-                <p class="date">Issued 2021</p>
-                <a href="#" target="_blank" class="btn-small">Show Credential</a>
-            </div>
-            <div class="cert-card">
-                <img src="Certifications/Divam Trivedi - Intro to Machine Learning.png" alt="Intro to Machine Learning">
-                <h3>Intro to Machine Learning</h3>
-                <p class="issuer">Kaggle</p>
-                <p class="date">Issued Aug 2021</p>
-                <a href="#" target="_blank" class="btn-small">Show Credential</a>
-            </div>
+            <!-- AWS Cloud & DevOps Category -->
+            <div class="cert-category">
+                <div class="category-header">
+                    <h2>Cloud & DevOps</h2>
+                    <div class="category-underline"></div>
+                </div>
+                <div class="cert-grid">
+                    <div class="cert-card">
+                        <img src="Certifications/AWS_SimuLearn_Networking_Concepts.tiff" alt="AWS SimuLearn: Networking Concepts">
+                        <h3>AWS SimuLearn: Networking Concepts</h3>
+                        <p class="issuer">AWS</p>
+                        <p class="date">July 2026</p>
+                    </div>
 
-            <div class="cert-card">
-                <img src="Certifications/Divam Trivedi - Intermediate Machine Learning.png" alt="Intermediate Machine Learning">
-                <h3>Intermediate Machine Learning</h3>
-                <p class="issuer">Divam Trivedi</p>
-                <p class="date">Issued 2021</p>
-                <a href="#" target="_blank" class="btn-small">Show Credential</a>
-            </div>
+                    <div class="cert-card">
+                        <img src="Certifications/AWS_SimuLearn_Cloud_First_Steps.tiff" alt="AWS SimuLearn: Cloud First Steps">
+                        <h3>AWS SimuLearn: Cloud First Steps</h3>
+                        <p class="issuer">AWS</p>
+                        <p class="date">July 2026</p>
+                    </div>
 
-            <div class="cert-card">
-                <img src="Certifications/Divam Trivedi - Intro to Game AI and Reinforcement Learning.png" alt="Intro to Game AI and RL">
-                <h3>Intro to Game AI & Reinforcement Learning</h3>
-                <p class="issuer">Divam Trivedi</p>
-                <p class="date">Issued 2021</p>
-                <a href="#" target="_blank" class="btn-small">Show Credential</a>
-            </div>
+                    <div class="cert-card">
+                        <img src="Certifications/AWS_SimuLearn_Cloud_Computing_Essentials.tiff" alt="AWS SimuLearn: Cloud Computing Essentials">
+                        <h3>AWS SimuLearn: Cloud Computing Essentials</h3>
+                        <p class="issuer">AWS</p>
+                        <p class="date">July 2026</p>
+                    </div>
 
-            <!-- C++ Certificate -->
-            <div class="cert-card">
-                <img src="Certifications/Sololearn_C++.png" alt="C++ Certificate">
-                <h3>C++ Course</h3>
-                <p class="issuer">Sololearn</p>
-                <p class="date">Issued Oct 2019</p>
-                <a href="#" target="_blank" class="btn-small">Show Credential</a>
+                    <div class="cert-card">
+                        <img src="Certifications/AWS_Solutions_Architect_Fundamentals_of_Architecting_on_AWS.tiff" alt="AWS Solutions Architect - Fundamentals of Architecting on AWS">
+                        <h3>AWS Solutions Architect - Fundamentals of Architecting on AWSs</h3>
+                        <p class="issuer">AWS</p>
+                        <p class="date">July 2026</p>
+                    </div>
+                </div>
             </div>
 
-            <!-- Python Certifications -->
-            <div class="cert-card">
-                <img src="Certifications/Divam Trivedi - Python.png" alt="Python Certificate">
-                <h3>Python</h3>
-                <p class="issuer">Kaggle</p>
-                <p class="date">Issued Jul 2021</p>
-                <a href="#" target="_blank" class="btn-small">Show Credential</a>
+            <!-- Machine Learning & AI Category -->
+            <div class="cert-category">
+                <div class="category-header">
+                    <h2>Machine Learning & AI</h2>
+                    <div class="category-underline"></div>
+                </div>
+                <div class="cert-grid">
+                    <div class="cert-card">
+                        <img src="Certifications/Divam Trivedi - Computer Vision.png" alt="Computer Vision Certificate">
+                        <h3>Computer Vision</h3>
+                        <p class="issuer">Kaggle</p>
+                        <p class="date">January 2025</p>
+                    </div>
+                    
+                    <div class="cert-card">
+                        <img src="Certifications/Divam Trivedi - Intro to Game AI and Reinforcement Learning.png" alt="Intro to Game AI and Reinforcement Learning">
+                        <h3>Intro to Game AI & RL</h3>
+                        <p class="issuer">Kaggle</p>
+                        <p class="date">January 2025</p>
+                    </div>
+
+                    <div class="cert-card">
+                        <img src="Certifications/Divam Trivedi - Intermediate Machine Learning.png" alt="Intermediate Machine Learning">
+                        <h3>Intermediate Machine Learning</h3>
+                        <p class="issuer">Kaggle</p>
+                        <p class="date">March 2024</p>
+                    </div>
+
+                    <div class="cert-card">
+                        <img src="Certifications/Divam Trivedi - Intro to Machine Learning.png" alt="Intro to Machine Learning">
+                        <h3>Intro to Machine Learning</h3>
+                        <p class="issuer">Kaggle</p>
+                        <p class="date">Aug 2021</p>
+                    </div>
+                </div>
             </div>
 
-            <div class="cert-card">
-                <img src="Certifications/IITK_Logo.png" alt="Basics of Python">
-                <h3>Basics of Python Programming</h3>
-                <p class="issuer">IIT Kharagpur</p>
-                <p class="date">Issued Jan 2021</p>
-                <a href="#" target="_blank" class="btn-small">Show Credential</a>
+            <!-- Programming Languages Category -->
+            <div class="cert-category">
+                <div class="category-header">
+                    <h2>Programming Languages</h2>
+                    <div class="category-underline"></div>
+                </div>
+                <div class="cert-grid">
+
+                    <div class="cert-card">
+                        <img src="Certifications/HackerRank_SQL_Basic.png" alt="SQL Basic">
+                        <h3>SQL (Basic)</h3>
+                        <p class="issuer">HackerRank</p>
+                        <p class="date">November 2022</p>
+                    </div>
+
+                    <div class="cert-card">
+                        <img src="Certifications/HackerRank_Python_Basic.png" alt="Python Basic">
+                        <h3>Python (Basic)</h3>
+                        <p class="issuer">HackerRank</p>
+                        <p class="date">July 2021</p>
+                    </div>
+
+                    <div class="cert-card">
+                        <img src="Certifications/Divam Trivedi - Python.png" alt="Python Certificate">
+                        <h3>Python</h3>
+                        <p class="issuer">Kaggle</p>
+                        <p class="date">July 2021</p>
+                    </div>
+
+                    <div class="cert-card">
+                        <img src="Certifications/Sololearn_C++.png" alt="C++ Certificate">
+                        <h3>C++</h3>
+                        <p class="issuer">Sololearn</p>
+                        <p class="date">October 2019</p>
+                    </div>
+
+                    <div class="cert-card">
+                        <img src="Certifications/Sololearn_Swift4.png" alt="Swift 4">
+                        <h3>Swift 4</h3>
+                        <p class="issuer">Sololearn</p>
+                        <p class="date">August 2018</p>
+                    </div>
+                </div>
             </div>
 
-            <!-- SQL Certificate -->
-            <div class="cert-card">
-                <img src="Certifications/HackerRank_SQL_Basic.png" alt="SQL Basic">
-                <h3>SQL (Basic)</h3>
-                <p class="issuer">HackerRank</p>
-                <p class="date">Issued 2021</p>
-                <a href="#" target="_blank" class="btn-small">Show Credential</a>
-            </div>
+            <!-- Foundations & Other Category -->
+            <div class="cert-category">
+                <div class="category-header">
+                    <h2>Foundations & Other</h2>
+                    <div class="category-underline"></div>
+                </div>
+                <div class="cert-grid">
+                    <div class="cert-card">
+                        <img src="Certifications/Divam Trivedi - Intro to Programming.png" alt="Intro to Programming">
+                        <h3>Intro to Programming</h3>
+                        <p class="issuer">Kaggle</p>
+                        <p class="date">April 2023</p>
+                    </div>
 
-            <!-- Swift Certificate -->
-            <div class="cert-card">
-                <img src="Certifications/Sololearn_Swift4.png" alt="Swift 4">
-                <h3>Swift 4</h3>
-                <p class="issuer">Sololearn</p>
-                <p class="date">Issued Aug 2018</p>
-                <a href="#" target="_blank" class="btn-small">Show Credential</a>
-            </div>
-
-            <!-- Other Certifications -->
-
-            <div class="cert-card">
-                <img src="Certifications/Divam Trivedi - Intro to Programming.png" alt="Intro to Programming">
-                <h3>Intro to Programming</h3>
-                <p class="issuer">Divam Trivedi</p>
-                <p class="date">Issued 2021</p>
-                <a href="#" target="_blank" class="btn-small">Show Credential</a>
-            </div>
-
-            <div class="cert-card">
-                <img src="Certifications/HackerRank_Python_Basic.png" alt="Python Basic">
-                <h3>Python (Basic)</h3>
-                <p class="issuer">HackerRank</p>
-                <p class="date">Issued Jul 2021</p>
-                <a href="#" target="_blank" class="btn-small">Show Credential</a>
+                    <div class="cert-card">
+                        <img src="Certifications/IITK_Logo.png" alt="Basics of Python">
+                        <h3>Basics of Python Programming</h3>
+                        <p class="issuer">IIT Kharagpur</p>
+                        <p class="date">January 2021</p>
+                    </div>
+                </div>
             </div>
 
         </div>
-    </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <p>&copy; 2025 Divam Trivedi. Building intelligent robots that see, think, and act.</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
