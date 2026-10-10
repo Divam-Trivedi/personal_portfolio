@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Orchestrator: every AI model in one app</title>
+<meta name="description" content="Chat with OpenAI, Anthropic, Gemini, DeepSeek, Ollama and more from one app that runs on your computer. Download for macOS or Windows.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23000'/%3E%3Ccircle cx='16' cy='16' r='4' fill='%23fff'/%3E%3Ccircle cx='7' cy='9' r='2' fill='%23fff'/%3E%3Ccircle cx='25' cy='9' r='2' fill='%23fff'/%3E%3Ccircle cx='16' cy='26' r='2' fill='%23fff'/%3E%3C/svg%3E">
+<style>
+:root{--bg:#000;--panel:#121212;--line:#262626;--text:#f4f4f5;--muted:#a1a1aa;--accent:#fff;--on-accent:#000;--bubble:#27272a;--focus:#60a5fa}
+@media (prefers-color-scheme:light){:root{--bg:#fff;--panel:#f8fafc;--line:#e2e8f0;--text:#0f172a;--muted:#475569;--accent:#0f172a;--on-accent:#fff;--bubble:#e2e8f0;--focus:#2563eb}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--focus);outline-offset:3px;border-radius:6px}
+.wrap{max-width:60rem;margin:0 auto;padding:0 1.5rem}
+header{display:flex;align-items:center;gap:.6rem;padding:1.5rem 0;font-weight:600}
+header svg{width:1.75rem;height:1.75rem}
+.hero{padding:3rem 0 2.5rem}
+h1{margin:0;max-width:14ch;font-size:clamp(2.5rem,7vw,4.5rem);font-weight:300;font-style:italic;line-height:1.05;letter-spacing:-.03em}
+.lead{max-width:34rem;margin:1.25rem 0 0;font-size:1.15rem;color:var(--muted)}
+.downloads{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+.btn{display:inline-flex;align-items:center;gap:.6rem;min-height:3.25rem;padding:0 1.5rem;border:1px solid var(--line);border-radius:.75rem;background:transparent;color:var(--text);font-weight:600;text-decoration:none;transition:background-color .15s,border-color .15s}
+.btn:hover{border-color:var(--muted)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.btn.primary:hover{opacity:.9}
+.btn svg{width:1.15rem;height:1.15rem}
+.btn small{font-weight:400;opacity:.7}
+.sub{margin:.9rem 0 0;font-size:.875rem;color:var(--muted)}
+#mobile-note{display:none;margin:.9rem 0 0;font-size:.875rem;color:var(--muted)}
+.preview{display:grid;grid-template-columns:30% 1fr;height:22rem;margin-top:3rem;overflow:hidden;border:1px solid var(--line);border-radius:1rem;background:var(--panel)}
+.pv-side{padding:1rem;border-right:1px solid var(--line)}
+.pv-new{height:1.9rem;border-radius:.5rem;background:var(--accent)}
+.pv-row{height:.6rem;margin-top:.9rem;border-radius:9999px;background:var(--line)}
+.pv-main{display:flex;flex-direction:column;min-width:0}
+.pv-head{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.8rem 1.1rem;border-bottom:1px solid var(--line);font-size:.8rem}
+.pv-bar{display:flex;flex:0 1 7rem;height:.5rem;overflow:hidden;border-radius:9999px;background:var(--line)}
+.pv-bar i{display:block;height:100%}
+.pv-chat{display:flex;flex:1;flex-direction:column;gap:.8rem;padding:1.1rem}
+.pv-msg{max-width:78%;padding:.65rem .9rem;border-radius:1rem;background:var(--bubble);font-size:.85rem;line-height:1.45}
+.pv-msg.user{align-self:flex-end}
+.pv-msg.ai{align-self:flex-start;background:transparent;border:1px solid var(--line)}
+.pv-input{display:flex;align-items:center;justify-content:space-between;margin:0 1.1rem 1.1rem;padding:.7rem .9rem;border:1px solid var(--line);border-radius:.75rem;color:var(--muted);font-size:.85rem}
+.pv-send{width:1.6rem;height:1.6rem;border-radius:.45rem;background:var(--accent)}
+.features{display:grid;grid-template-columns:repeat(2,1fr);gap:0 3rem;margin:4rem 0 0;padding:0;list-style:none}
+.features li{padding:1.5rem 0;border-top:1px solid var(--line)}
+.features svg{width:1.4rem;height:1.4rem;margin-bottom:.6rem}
+.features h2{margin:0 0 .25rem;font-size:1.05rem;font-weight:600}
+.features p{margin:0;color:var(--muted)}
+.start{margin:3rem 0 0;padding:1.5rem 0;border-top:1px solid var(--line)}
+.start h2{margin:0 0 .5rem;font-size:1.05rem}
+.start p{margin:0 0 .75rem;color:var(--muted)}
+details{margin-top:.5rem}
+summary{cursor:pointer;font-weight:600}
+details p{margin:.6rem 0 0}
+footer{padding:2.5rem 0 3rem;border-top:1px solid var(--line);font-size:.875rem;color:var(--muted)}
+@media (max-width:640px){.preview{grid-template-columns:1fr;height:20rem}.pv-side{display:none}.features{grid-template-columns:1fr}.btn{flex:1 1 100%;justify-content:center}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="currentColor"/><g fill="var(--bg)"><circle cx="16" cy="16" r="4"/><circle cx="7" cy="9" r="2"/><circle cx="25" cy="9" r="2"/><circle cx="16" cy="26" r="2"/></g></svg>
+    AI Orchestrator
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Every AI model, one app.</h1>
+      <p class="lead">Chat with OpenAI, Anthropic, Gemini, DeepSeek, Ollama and more from a single app that runs on your computer.</p>
+
+      <div class="downloads">
+        <a class="btn" data-os="mac" href="https://drive.google.com/file/d/1BJY0qJmTay2IyXUwWM0rG4h4AxAa3p6S/view?usp=sharing">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M4 21h16"/></svg>
+          Download for macOS
+        </a>
+        <a class="btn" data-os="windows" href="https://drive.google.com/file/d/1BJY0qJmTay2IyXUwWM0rG4h4AxAa3p6S/view?usp=sharing">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M4 21h16"/></svg>
+          Download for Windows
+        </a>
+      </div>
+      <p class="sub">On an Intel Mac? <a href="https://github.com/YOUR-USER/YOUR-REPO/releases/latest/download/ChatbotAPIs-mac-intel.zip">Get the Intel build</a>.</p>
+      <p id="mobile-note">This app is for computers. Open this page on a Mac or Windows PC to download it.</p>
+
+      <div class="preview" role="img" aria-label="Preview of the app: a chat window with a model picker and token usage bar">
+        <div class="pv-side" aria-hidden="true"><div class="pv-new"></div><div class="pv-row" style="width:80%"></div><div class="pv-row" style="width:62%"></div><div class="pv-row" style="width:72%"></div><div class="pv-row" style="width:50%"></div></div>
+        <div class="pv-main" aria-hidden="true">
+          <div class="pv-head"><span>Any model ▾</span><div class="pv-bar"><i style="width:55%;background:#64748b"></i><i style="width:30%;background:#94a3b8"></i><i style="width:15%;background:#475569"></i></div></div>
+          <div class="pv-chat">
+            <div class="pv-msg user">Compare these two contracts and list the differences.</div>
+            <div class="pv-msg ai">Both agreements cover the same term, but the second adds a termination fee and shortens the notice period to 30 days.</div>
+            <div class="pv-msg user">Now answer again with a different model.</div>
+          </div>
+          <div class="pv-input"><span>Ask anything...</span><span class="pv-send"></span></div>
+        </div>
+      </div>
+    </section>
+
+    <ul class="features">
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 10 5-10 5L2 7z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg>
+        <h2>Switch models mid-chat</h2>
+        <p>Use your own keys from any provider, or a local model, and change models without starting over.</p>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0"/><path d="M12 19v3"/></svg>
+        <h2>Talk instead of typing</h2>
+        <p>Dictate messages or have a spoken conversation, with transcription in the cloud or on your own machine.</p>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
+        <h2>Bring your files</h2>
+        <p>Attach PDFs, documents, code and images to any conversation, and keep chats sorted in groups.</p>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        <h2>Stays on your computer</h2>
+        <p>Your chats and API keys are stored on your machine. Messages go only to the providers you choose.</p>
+      </li>
+    </ul>
+
+    <section class="start">
+      <h2>Getting started</h2>
+      <p>Download, open the app, and it launches in your browser. Add an API key in the settings, pick a model and start chatting. To quit, use the power icon at the bottom of the sidebar.</p>
+      <details>
+        <summary>Seeing a security warning on first launch?</summary>
+        <p>The app isn't code-signed yet, so your system asks you to confirm it once. On macOS, right-click the app, choose Open, then choose Open again. On Windows, choose More info, then Run anyway.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer>AI Orchestrator</footer>
+</div>
+
+<script>
+(function () {
+  var ua = navigator.userAgent;
+  var mobile = /iPhone|iPad|iPod|Android/i.test(ua);
+  var os = mobile ? null : /Windows/i.test(ua) ? 'windows' : /Macintosh|Mac OS X/i.test(ua) ? 'mac' : null;
+  if (os) document.querySelector('[data-os="' + os + '"]').classList.add('primary');
+  if (mobile) document.getElementById('mobile-note').style.display = 'block';
+})();
+</script>
+</body>
+</html>
