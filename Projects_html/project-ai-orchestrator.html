@@ -71,16 +71,22 @@ footer{padding:2.5rem 0 3rem;border-top:1px solid var(--line);font-size:.875rem;
       <p class="lead">Chat with OpenAI, Anthropic, Gemini, DeepSeek, Ollama and more from a single app that runs on your computer.</p>
 
       <div class="downloads">
-        <a class="btn" data-os="mac" href="https://drive.google.com/file/d/1BJY0qJmTay2IyXUwWM0rG4h4AxAa3p6S/view?usp=sharing">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M4 21h16"/></svg>
+        <a class="btn" data-os="mac"
+          href="https://github.com/Divam-Trivedi/AI_Orchestrator-releases/releases/latest/download/ChatbotAPIs-mac.zip">
           Download for macOS
         </a>
-        <a class="btn" data-os="windows" href="https://drive.google.com/file/d/1BJY0qJmTay2IyXUwWM0rG4h4AxAa3p6S/view?usp=sharing">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M4 21h16"/></svg>
+
+        <a class="btn" data-os="windows"
+          href="https://github.com/Divam-Trivedi/AI_Orchestrator-releases/releases/latest/download/chatbot-backend.exe">
           Download for Windows
         </a>
+
+        <a class="btn" data-os="linux"
+          href="https://github.com/Divam-Trivedi/AI_Orchestrator-releases/releases/latest/download/ChatbotAPIs-linux.tar.gz">
+          Download for Linux
+        </a>
       </div>
-      <p class="sub">On an Intel Mac? <a href="https://github.com/YOUR-USER/YOUR-REPO/releases/latest/download/ChatbotAPIs-mac-intel.zip">Get the Intel build</a>.</p>
+
       <p id="mobile-note">This app is for computers. Open this page on a Mac or Windows PC to download it.</p>
 
       <div class="preview" role="img" aria-label="Preview of the app: a chat window with a model picker and token usage bar">
@@ -134,12 +140,32 @@ footer{padding:2.5rem 0 3rem;border-top:1px solid var(--line);font-size:.875rem;
 </div>
 
 <script>
+
 (function () {
   var ua = navigator.userAgent;
+
   var mobile = /iPhone|iPad|iPod|Android/i.test(ua);
-  var os = mobile ? null : /Windows/i.test(ua) ? 'windows' : /Macintosh|Mac OS X/i.test(ua) ? 'mac' : null;
-  if (os) document.querySelector('[data-os="' + os + '"]').classList.add('primary');
-  if (mobile) document.getElementById('mobile-note').style.display = 'block';
+
+  var os = null;
+
+  if (!mobile) {
+    if (/Windows/i.test(ua)) {
+      os = 'windows';
+    } else if (/Macintosh|Mac OS X/i.test(ua)) {
+      os = 'mac';
+    } else if (/Linux/i.test(ua)) {
+      os = 'linux';
+    }
+  }
+
+  if (os) {
+    document.querySelector('[data-os="' + os + '"]')
+      .classList.add('primary');
+  }
+
+  if (mobile) {
+    document.getElementById('mobile-note').style.display = 'block';
+  }
 })();
 </script>
 </body>
